@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SummaryViewController.swift
 //  Habits
 //
 //  Created by James Brown on 9/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
