@@ -20,6 +20,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        fetchHabits()
     }
     
     // MARK: table protocols
@@ -28,7 +30,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return sections.count
         }
         
-        return 0g
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,14 +43,34 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell") {
-            
-            cell.textLabel?.text = "foo"
+            let habit = controller.object(at: indexPath)
+            cell.textLabel?.text = habit.name
             
             return cell
             
         }
         
         return UITableViewCell()
+    }
+    
+    // MARK: funcs
+    func fetchHabits() {
+        let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
+        
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [nameSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = controller
+        
+        controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError 
+            print("\(error)")
+        }
     }
 
 }
