@@ -25,4 +25,12 @@ class AddTableViewController: UITableViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func nameFieldChanged(_ sender: UITextField) {
+        if let text = sender.text, text.isEmpty == false {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    }
+    
 }
