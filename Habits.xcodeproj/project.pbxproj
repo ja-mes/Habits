@@ -11,6 +11,7 @@
 		9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */; };
 		9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */; };
 		9BB607671D8F144400421825 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607661D8F144400421825 /* AddTableViewController.swift */; };
+		9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607691D8F2E4D00421825 /* Constants.swift */; };
 		9BB7626A1D85F91200D4A004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB762691D85F91200D4A004 /* AppDelegate.swift */; };
 		9BB7626C1D85F91200D4A004 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */; };
 		9BB7626F1D85F91200D4A004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB7626D1D85F91200D4A004 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BB607661D8F144400421825 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTableViewController.swift; path = ../AddTableViewController.swift; sourceTree = "<group>"; };
+		9BB607691D8F2E4D00421825 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BB762661D85F91200D4A004 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB762691D85F91200D4A004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
+		9BB607681D8F2E4300421825 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9BB607691D8F2E4D00421825 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		9BB7625D1D85F91200D4A004 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 		9BB762681D85F91200D4A004 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
+				9BB607681D8F2E4300421825 /* Util */,
 				9BB762801D85F9ED00D4A004 /* Model */,
 				9BB7627F1D85F9E700D4A004 /* View */,
 				9BB7627E1D85F9E300D4A004 /* Controller */,
@@ -191,6 +202,7 @@
 				9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */,
 				9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */,
 				9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */,
+				9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
