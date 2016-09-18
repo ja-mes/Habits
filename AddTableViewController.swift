@@ -21,7 +21,14 @@ class AddTableViewController: UITableViewController {
     
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        let habit = Habit(context: context)
         
+        if nameValid() {
+            habit.name = nameField.text
+        }
+        
+        ad.saveContext()
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
@@ -29,10 +36,19 @@ class AddTableViewController: UITableViewController {
     }
     
     @IBAction func nameFieldChanged(_ sender: UITextField) {
-        if let text = sender.text, text.isEmpty == false {
+        if nameValid() {
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    }
+    
+    // MARK: functions
+    func nameValid() -> Bool {
+        if let text = nameField.text, text.isEmpty == false {
+            return true
+        } else {
+            return false
         }
     }
     
