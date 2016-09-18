@@ -9,11 +9,14 @@
 import UIKit
 
 class AddTableViewController: UITableViewController {
+    
+    @IBOutlet weak var nameField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem?.isEnabled = false
+        nameField.becomeFirstResponder()
     }
     
     // MARK: IBActions
