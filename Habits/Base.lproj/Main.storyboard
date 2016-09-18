@@ -193,6 +193,9 @@
                     <navigationItem key="navigationItem" title="Habits" id="r4U-SA-jK2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CJJ-Jx-bOe"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="NDB-EV-tQP" id="1So-cI-wQR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAX-ks-vTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
