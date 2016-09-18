@@ -133,9 +133,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rY-Iy-2pm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Habits" image="MenuIcon" id="OSF-Dv-oF7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hkj-fc-aj1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hkj-fc-aj1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -146,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="1961" y="725"/>
         </scene>
-        <!--View Controller-->
+        <!--Habits-->
         <scene sceneID="BWh-MQ-B7r">
             <objects>
-                <viewController id="mRv-Cm-alo" sceneMemberID="viewController">
+                <viewController id="mRv-Cm-alo" customClass="HabitsViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nVq-9t-wfv"/>
                         <viewControllerLayoutGuide type="bottom" id="vtD-KR-03P"/>
@@ -189,7 +190,9 @@
                             <constraint firstItem="vtD-KR-03P" firstAttribute="top" secondItem="NDB-EV-tQP" secondAttribute="bottom" id="yW9-qZ-Yfm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="r4U-SA-jK2"/>
+                    <navigationItem key="navigationItem" title="Habits" id="r4U-SA-jK2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CJJ-Jx-bOe"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAX-ks-vTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

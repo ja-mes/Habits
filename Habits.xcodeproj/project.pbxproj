@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */; };
 		9BB7626A1D85F91200D4A004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB762691D85F91200D4A004 /* AppDelegate.swift */; };
 		9BB7626C1D85F91200D4A004 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */; };
 		9BB7626F1D85F91200D4A004 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB7626D1D85F91200D4A004 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		9BB762661D85F91200D4A004 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB762691D85F91200D4A004 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */,
+				9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				9BB7626C1D85F91200D4A004 /* SummaryViewController.swift in Sources */,
 				9BB7626A1D85F91200D4A004 /* AppDelegate.swift in Sources */,
 				9BB762721D85F91200D4A004 /* Habits.xcdatamodeld in Sources */,
+				9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
