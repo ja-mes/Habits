@@ -242,8 +242,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="N3V-gB-w5E">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yCm-zH-Xvu"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFn-NE-EfD"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yCm-zH-Xvu">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Et4-jS-ffr" id="May-aH-dLW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFn-NE-EfD">
+                            <connections>
+                                <action selector="saveTapped:" destination="Et4-jS-ffr" id="DG7-aL-orn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9e-0d-uYV" userLabel="First Responder" sceneMemberID="firstResponder"/>

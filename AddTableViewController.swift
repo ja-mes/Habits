@@ -13,4 +13,14 @@ class AddTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: IBActions
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
 }
