@@ -12,6 +12,8 @@ class AddTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     // MARK: IBActions
