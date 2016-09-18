@@ -191,7 +191,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Habits" id="r4U-SA-jK2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CJJ-Jx-bOe"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="CJJ-Jx-bOe">
+                            <connections>
+                                <segue destination="Et4-jS-ffr" kind="show" id="aTZ-Pa-Xxd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NDB-EV-tQP" id="1So-cI-wQR"/>
@@ -200,6 +204,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAX-ks-vTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2900" y="724.58770614692662"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="Ftw-eb-Mm0">
+            <objects>
+                <tableViewController id="Et4-jS-ffr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="UuS-UT-6Zd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="y2A-4w-9Gm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dcL-uw-o4l">
+                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcL-uw-o4l" id="3jK-qg-RCv">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-tY-a8r">
+                                                    <frame key="frameInset" minX="15" minY="7" width="352" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Et4-jS-ffr" id="XiX-3N-m4I"/>
+                            <outlet property="delegate" destination="Et4-jS-ffr" id="7qK-ex-y8A"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Item" id="N3V-gB-w5E">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yCm-zH-Xvu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wFn-NE-EfD"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9e-0d-uYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3757.5999999999999" y="724.58770614692662"/>
         </scene>
     </scenes>
     <resources>
