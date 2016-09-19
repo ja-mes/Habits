@@ -90,7 +90,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    // MARK: funcs
+    // MARK: functions
     func fetchHabits() {
         let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
         
@@ -98,6 +98,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchRequest.sortDescriptors = [nameSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
         self.controller = controller
         
         controller.delegate = self
@@ -106,7 +107,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             try controller.performFetch()
         } catch {
             let error = error as NSError 
-            print("\(error)")
+            print("JAMES: \(error)")
         }
     }
     
