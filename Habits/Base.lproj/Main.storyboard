@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DKt-Yk-hZw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DKt-Yk-hZw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -133,7 +133,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rY-Iy-2pm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Habits" image="MenuIcon" id="OSF-Dv-oF7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hkj-fc-aj1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hkj-fc-aj1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -159,6 +159,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-Fj-GhX">
+                                <segments>
+                                    <segment title="Today"/>
+                                    <segment title="All"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDB-EV-tQP">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -184,10 +191,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDB-EV-tQP" firstAttribute="top" secondItem="yE7-hg-ENT" secondAttribute="top" id="Hw9-ZK-rqJ"/>
-                            <constraint firstAttribute="trailing" secondItem="NDB-EV-tQP" secondAttribute="trailing" id="UZq-cy-Vn1"/>
-                            <constraint firstItem="NDB-EV-tQP" firstAttribute="leading" secondItem="yE7-hg-ENT" secondAttribute="leading" id="Vjo-QZ-r78"/>
-                            <constraint firstItem="vtD-KR-03P" firstAttribute="top" secondItem="NDB-EV-tQP" secondAttribute="bottom" id="yW9-qZ-Yfm"/>
+                            <constraint firstAttribute="trailing" secondItem="NDB-EV-tQP" secondAttribute="trailing" id="1pM-53-sal"/>
+                            <constraint firstItem="SK3-Fj-GhX" firstAttribute="leading" secondItem="yE7-hg-ENT" secondAttribute="leadingMargin" id="Cmk-lP-uVM"/>
+                            <constraint firstItem="NDB-EV-tQP" firstAttribute="top" secondItem="SK3-Fj-GhX" secondAttribute="bottom" constant="8" id="Ffg-T2-sZf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SK3-Fj-GhX" secondAttribute="trailing" id="RRv-54-S1I"/>
+                            <constraint firstItem="vtD-KR-03P" firstAttribute="top" secondItem="NDB-EV-tQP" secondAttribute="bottom" id="VkA-PE-N0A"/>
+                            <constraint firstItem="SK3-Fj-GhX" firstAttribute="top" secondItem="nVq-9t-wfv" secondAttribute="bottom" constant="8" id="aUm-rz-dKs"/>
+                            <constraint firstItem="NDB-EV-tQP" firstAttribute="leading" secondItem="yE7-hg-ENT" secondAttribute="leading" id="hSC-hS-DyZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Habits" id="r4U-SA-jK2">
@@ -220,7 +230,7 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcL-uw-o4l" id="3jK-qg-RCv">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-tY-a8r">
