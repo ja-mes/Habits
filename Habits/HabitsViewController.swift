@@ -58,6 +58,22 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let done = UITableViewRowAction(style: .normal, title: "Done!") { action, index in
+            print("done button tapped")
+        }
+        done.backgroundColor = #colorLiteral(red: 0.262745098, green: 0.6274509804, blue: 0.2784313725, alpha: 1)
+        
+
+        return [done]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    
+    
     // MARK: fetched results controller
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
