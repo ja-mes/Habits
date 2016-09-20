@@ -25,6 +25,12 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchHabits()
     }
     
+    // MARK: IBActions
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        fetchHabits()
+        tableView.reloadData()
+    }
+    
     // MARK: table protocols
     func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = controller.sections {
@@ -91,34 +97,26 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-//    println(self.appdel.fromdate) // prints 2015-09-25
-//    println(self.appdel.todate) // prints 2015-09-26
-//    
-//    var fromdate = "\(self.appdel.fromdate) 00:00" // add hours and mins to fromdate
-//    var todate = "\(self.appdel.todate) 23:59" // add hours and mins to todate
-//    
-//    var context : NSManagedObjectContext = appdel.managedObjectContext!
-//    var request = NSFetchRequest(entityName: "TblReportsP")
-//    request.returnsObjectsAsFaults = false
-//    let dateFormatter = NSDateFormatter()
-//    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-//    dateFormatter.timeZone = NSTimeZone(name: "GMT") // this line resolved me the issue of getting one day less than the selected date
-//    let startDate:NSDate = dateFormatter.dateFromString(fromdate)!
-//    let endDate:NSDate = dateFormatter.dateFromString(todate)!
-//    request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", startDate, endDate)
-//    
-//    request.sortDescriptors = [NSSortDescriptor(key: "report_id", ascending: false)]
-//    var results : NSArray = context.executeFetchRequest(request, error: nil)!
-//    
-//    println(results.count)
-    
     
     // MARK: functions
+    
     func fetchHabits() {
         let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
         
+        
+        // predicates
+        
+        if segment.selectedSegmentIndex == 0 {
+            let today = NSCalendar.current.startOfDay(for: Date())
+            let datePredicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
+            fetchRequest.predicate = datePredicate
+        }
+        
+        
+        // sort descriptors
         let nameSort = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [nameSort]
+        
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -136,7 +134,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
         let habit = controller.object(at: indexPath)
-        cell.textLabel?.text = "\(habit.lastEntry)"
+        cell.textLabel?.text = habit.name
     }
 
 }
