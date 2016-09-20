@@ -12,6 +12,7 @@ import CoreData
 class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     var controller: NSFetchedResultsController<Habit>!
     
@@ -90,6 +91,28 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+//    println(self.appdel.fromdate) // prints 2015-09-25
+//    println(self.appdel.todate) // prints 2015-09-26
+//    
+//    var fromdate = "\(self.appdel.fromdate) 00:00" // add hours and mins to fromdate
+//    var todate = "\(self.appdel.todate) 23:59" // add hours and mins to todate
+//    
+//    var context : NSManagedObjectContext = appdel.managedObjectContext!
+//    var request = NSFetchRequest(entityName: "TblReportsP")
+//    request.returnsObjectsAsFaults = false
+//    let dateFormatter = NSDateFormatter()
+//    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+//    dateFormatter.timeZone = NSTimeZone(name: "GMT") // this line resolved me the issue of getting one day less than the selected date
+//    let startDate:NSDate = dateFormatter.dateFromString(fromdate)!
+//    let endDate:NSDate = dateFormatter.dateFromString(todate)!
+//    request.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", startDate, endDate)
+//    
+//    request.sortDescriptors = [NSSortDescriptor(key: "report_id", ascending: false)]
+//    var results : NSArray = context.executeFetchRequest(request, error: nil)!
+//    
+//    println(results.count)
+    
+    
     // MARK: functions
     func fetchHabits() {
         let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
@@ -113,7 +136,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
         let habit = controller.object(at: indexPath)
-        cell.textLabel?.text = habit.name
+        cell.textLabel?.text = "\(habit.lastEntry)"
     }
 
 }

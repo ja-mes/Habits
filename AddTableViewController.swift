@@ -25,6 +25,7 @@ class AddTableViewController: UITableViewController {
         
         if nameValid() {
             habit.name = nameField.text
+            habit.lastEntry = Date()
         }
         
         ad.saveContext()
