@@ -62,16 +62,21 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let done = UITableViewRowAction(style: .normal, title: "Done!") { action, index in
             print("done button tapped")
         }
-        done.backgroundColor = #colorLiteral(red: 0.262745098, green: 0.6274509804, blue: 0.2784313725, alpha: 1)
+        done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
+        
+        let skip = UITableViewRowAction(style: .normal, title: "Skip") { action, index in
+            print("done button tapped")
+        }
+        skip.backgroundColor = UIColor.gray
         
 
-        return [done]
+        return [skip, done]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
     
     
     // MARK: fetched results controller
