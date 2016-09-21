@@ -19,6 +19,10 @@ class Streak {
             UserDefaults.standard.set(0, forKey: STREAK_KEY)
             streakDays = 0
         }
+        
+        if UserDefaults.standard.object(forKey: COMPLETED_KEY) == nil {
+            UserDefaults.standard.set(0, forKey: COMPLETED_KEY)
+        }
     }
     
     func incCompleted() -> Int {
