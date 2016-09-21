@@ -35,8 +35,11 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StreakCell", for: indexPath)
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StreakCell", for: indexPath) as?  StreakCollectionViewCell {
+            cell.numLabel.text = "\(indexPath.row + 1)"
+            return cell
+        }
+        return UICollectionViewCell()
     }
     
 }

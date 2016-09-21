@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE93F1D92109D005F11D3 /* Streak.swift */; };
+		9B7AE9421D9307D0005F11D3 /* StreakCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE9411D9307D0005F11D3 /* StreakCollectionViewCell.swift */; };
 		9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */; };
 		9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */; };
 		9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		9B7AE93F1D92109D005F11D3 /* Streak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
+		9B7AE9411D9307D0005F11D3 /* StreakCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		9BB7627F1D85F9E700D4A004 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B7AE9411D9307D0005F11D3 /* StreakCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				9BB762721D85F91200D4A004 /* Habits.xcdatamodeld in Sources */,
 				9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */,
 				9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */,
+				9B7AE9421D9307D0005F11D3 /* StreakCollectionViewCell.swift in Sources */,
 				9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */,
 				9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */,
 				9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */,
