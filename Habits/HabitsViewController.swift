@@ -65,7 +65,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
         
         let notDone = UITableViewRowAction(style: .normal, title: "Not Done") { action, index in
-            //self.markAsDone(indexPath: indexPath)
+            self.markAsNotDone(indexPath: indexPath)
         }
         notDone.backgroundColor = UIColor.gray
         
@@ -171,6 +171,15 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         habit.lastEntry = Date()
         
         ad.saveContext()
+    }
+    
+    func markAsNotDone(indexPath: IndexPath) {
+        let habit = controller.object(at: indexPath)
+        
+        if let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date()) {
+            habit.lastEntry = yesterday
+            ad.saveContext()
+        }
     }
 
 }
