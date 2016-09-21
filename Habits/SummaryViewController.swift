@@ -8,20 +8,36 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController {
+class SummaryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var completedLbl: UILabel!
     @IBOutlet weak var streakLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
-        
-        streakLbl.text = "\(Streak.shared.streakDays)"
     }
-
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StreakCell", for: indexPath)
+        return cell
+    }
+    
 }
 
