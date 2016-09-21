@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        if UserDefaults.standard.object(forKey: STREAK_KEY) == nil {
-            UserDefaults.standard.set(0, forKey: STREAK_KEY)
-        }
+        Streak.shared.setupDefaults()
         
         return true
     }

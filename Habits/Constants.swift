@@ -9,3 +9,4 @@
 import Foundation
 
 let STREAK_KEY = "streak"
+let COMPLETED_KEY = "completed"
