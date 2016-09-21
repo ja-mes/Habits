@@ -25,7 +25,8 @@ class AddTableViewController: UITableViewController {
         
         if nameValid() {
             habit.name = nameField.text
-            habit.lastEntry = Date()
+            let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
+            habit.lastEntry = yesterday!
         }
         
         ad.saveContext()

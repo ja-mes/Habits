@@ -59,8 +59,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let done = UITableViewRowAction(style: .normal, title: "Done!") { action, index in
-            print("done button tapped")
+        let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
+            self.markAsDone(indexPath: indexPath)
         }
         done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
         
@@ -151,5 +151,15 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let habit = controller.object(at: indexPath)
         cell.textLabel?.text = habit.name
     }
+    
+    func markAsDone(indexPath: IndexPath) {
+        let habit = controller.object(at: indexPath)
+        habit.lastEntry = Date()
+        
+        ad.saveContext()
+    }
 
 }
+
+
+
