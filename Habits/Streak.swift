@@ -7,12 +7,26 @@
 //
 
 import Foundation
+import CoreData
 
 class Streak {
     static let shared = Streak()
     
     var streakDays = 0
     var completedHabits = 0
+    
+    var totalHabits: Int {
+        let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
+        var num = 0
+        
+        do {
+            num = try context.count(for: fetchRequest)
+        } catch {
+            print("JAMES: unable to count habits")
+        }
+        
+        return num
+    }
     
     func setupDefaults() {
         if UserDefaults.standard.object(forKey: STREAK_KEY) == nil {
