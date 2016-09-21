@@ -64,7 +64,16 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
         
-        return [done]
+        let notDone = UITableViewRowAction(style: .normal, title: "Not Done") { action, index in
+            //self.markAsDone(indexPath: indexPath)
+        }
+        notDone.backgroundColor = UIColor.gray
+        
+        if segment.selectedSegmentIndex == 0 {
+            return [done]
+        }
+        
+        return [notDone]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
