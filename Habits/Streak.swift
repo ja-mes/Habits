@@ -26,6 +26,7 @@ class Streak {
         set {
             _streakDays = newValue
             UserDefaults.standard.set(_streakDays, forKey: STREAK_KEY)
+            UserDefaults.standard.set(Date(), forKey: LAST_ENTRY_KEY)
         }
     }
     
@@ -77,7 +78,19 @@ class Streak {
             UserDefaults.standard.set(0, forKey: COMPLETED_KEY)
         }
         
+        // default last entry to yesterday
+        if UserDefaults.standard.object(forKey: LAST_ENTRY_KEY) == nil {
+            let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())!
+            UserDefaults.standard.set(yesterday, forKey: LAST_ENTRY_KEY)
+        }
+        
     }
+    
+    func checkStreakEnded() {
+        
+    }
+    
+    
     
 }
 
