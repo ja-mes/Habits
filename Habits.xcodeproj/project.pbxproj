@@ -61,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				9BB607691D8F2E4D00421825 /* Constants.swift */,
-				9B7AE93F1D92109D005F11D3 /* Streak.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -119,6 +118,7 @@
 		9BB762801D85F9ED00D4A004 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B7AE93F1D92109D005F11D3 /* Streak.swift */,
 				9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */,
 				9BB607631D8F0C9800421825 /* Generated */,
 			);
