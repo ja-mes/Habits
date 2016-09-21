@@ -27,9 +27,17 @@ class AddTableViewController: UITableViewController {
             habit.name = nameField.text
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
             habit.lastEntry = yesterday!
+            
+            ad.saveContext()
+            
+            let total = Streak.shared.totalHabits
+            let completed = Streak.shared.completedHabits
+            
+            if Streak.shared.streakDays != 0 && completed >= total - 1 {
+                Streak.shared.streakDays -= 1
+            }
         }
         
-        ad.saveContext()
         _ = navigationController?.popViewController(animated: true)
     }
     
