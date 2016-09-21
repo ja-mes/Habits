@@ -14,15 +14,22 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var completedLbl: UILabel!
     @IBOutlet weak var streakLbl: UILabel!
     
+    var numRows: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        numRows = Streak.shared.streakDays
+
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        numRows = Streak.shared.streakDays
+        
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
+        collectionView.reloadData()
     }
     
     
@@ -31,12 +38,12 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return numRows
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StreakCell", for: indexPath) as?  StreakCollectionViewCell {
-            cell.numLabel.text = "\(indexPath.row + 1)"
+            cell.numLabel.text = "\(numRows - indexPath.row)"
             return cell
         }
         return UICollectionViewCell()
