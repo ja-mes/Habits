@@ -34,9 +34,17 @@ class Streak {
             if let num = UserDefaults.standard.object(forKey: COMPLETED_KEY) as? Int {
                 _completedHabits = num
             }
+            
             return _completedHabits
         }
         set {
+            let total = totalHabits
+            
+            if newValue == total {
+                streakDays += 1
+            } else if _completedHabits == total && newValue != total {
+                streakDays -= 1
+            }
             _completedHabits = newValue
             UserDefaults.standard.set(_completedHabits, forKey: COMPLETED_KEY)
         }
@@ -67,7 +75,6 @@ class Streak {
         // default completed to 0
         if UserDefaults.standard.object(forKey: COMPLETED_KEY) == nil {
             UserDefaults.standard.set(0, forKey: COMPLETED_KEY)
-            completedHabits = 0
         }
         
     }
