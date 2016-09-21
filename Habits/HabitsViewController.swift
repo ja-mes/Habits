@@ -169,8 +169,9 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func markAsDone(indexPath: IndexPath) {
         let habit = controller.object(at: indexPath)
         habit.lastEntry = Date()
-        
         ad.saveContext()
+        
+        Streak.shared.completedHabits += 1
     }
     
     func markAsNotDone(indexPath: IndexPath) {
@@ -179,6 +180,8 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date()) {
             habit.lastEntry = yesterday
             ad.saveContext()
+            
+            Streak.shared.completedHabits -= 1
         }
     }
 

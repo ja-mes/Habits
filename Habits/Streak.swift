@@ -12,44 +12,65 @@ import CoreData
 class Streak {
     static let shared = Streak()
     
-    var streakDays = 0
-    var completedHabits = 0
+    private var _streakDays = 0
+    private var _completedHabits = 0
+    private var _totalHabits = 0
+    
+    var streakDays: Int {
+        get {
+            if let num = UserDefaults.standard.object(forKey: STREAK_KEY) as? Int {
+                _streakDays = num
+            }
+            return _streakDays
+        }
+        set {
+            _streakDays = newValue
+            UserDefaults.standard.set(_streakDays, forKey: STREAK_KEY)
+        }
+    }
+    
+    var completedHabits: Int {
+        get {
+            if let num = UserDefaults.standard.object(forKey: COMPLETED_KEY) as? Int {
+                _completedHabits = num
+            }
+            return _completedHabits
+        }
+        set {
+            _completedHabits = newValue
+            UserDefaults.standard.set(_completedHabits, forKey: COMPLETED_KEY)
+        }
+    }
     
     var totalHabits: Int {
         let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
-        var num = 0
+        _totalHabits = 0
         
         do {
-            num = try context.count(for: fetchRequest)
+            _totalHabits = try context.count(for: fetchRequest)
         } catch {
             print("JAMES: unable to count habits")
         }
         
-        return num
+        return _totalHabits
     }
     
+    
     func setupDefaults() {
+        // default streak to 0
         if UserDefaults.standard.object(forKey: STREAK_KEY) == nil {
             UserDefaults.standard.set(0, forKey: STREAK_KEY)
             streakDays = 0
         }
         
+        
+        // default completed to 0
         if UserDefaults.standard.object(forKey: COMPLETED_KEY) == nil {
             UserDefaults.standard.set(0, forKey: COMPLETED_KEY)
             completedHabits = 0
         }
+        
     }
     
-    func incCompleted() -> Int {
-        streakDays += 1
-        UserDefaults.standard.set(streakDays, forKey: COMPLETED_KEY)
-        return streakDays
-    }
-    
-    func decCompleted() -> Int {
-        streakDays -= 1
-        UserDefaults.standard.set(streakDays, forKey: COMPLETED_KEY)
-        return streakDays
-    }
 }
 

@@ -17,7 +17,7 @@ class SummaryViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        completedLbl.text = "\(Streak.shared.streakDays) of \(Streak.shared.totalHabits)"
+        completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
     }
 
 }
