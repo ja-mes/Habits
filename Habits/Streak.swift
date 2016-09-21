@@ -22,6 +22,7 @@ class Streak {
         
         if UserDefaults.standard.object(forKey: COMPLETED_KEY) == nil {
             UserDefaults.standard.set(0, forKey: COMPLETED_KEY)
+            completedHabits = 0
         }
     }
     
