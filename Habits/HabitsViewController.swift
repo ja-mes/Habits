@@ -171,7 +171,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         habit.lastEntry = Date()
         ad.saveContext()
         
-        Streak.shared.completedHabits += 1
+        Streak.shared.checkStreakCompleted(inc: true)
     }
     
     func markAsNotDone(indexPath: IndexPath) {
@@ -181,7 +181,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             habit.lastEntry = yesterday
             ad.saveContext()
             
-            Streak.shared.completedHabits -= 1
+            Streak.shared.checkStreakCompleted(inc: false)
         }
     }
 
