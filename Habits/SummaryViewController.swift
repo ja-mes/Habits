@@ -18,6 +18,9 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Streak.shared.checkStreakEnded()
+
         numRows = Streak.shared.streakDays
 
         collectionView.delegate = self
@@ -26,6 +29,7 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
         numRows = Streak.shared.streakDays
         
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"

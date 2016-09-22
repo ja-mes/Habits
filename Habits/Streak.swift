@@ -26,7 +26,6 @@ class Streak {
         set {
             _streakDays = newValue
             UserDefaults.standard.set(_streakDays, forKey: STREAK_KEY)
-            UserDefaults.standard.set(Date(), forKey: LAST_ENTRY_KEY)
         }
     }
     
@@ -64,6 +63,16 @@ class Streak {
         return _totalHabits
     }
     
+    var lastEntry: Date {
+        get {
+            return UserDefaults.standard.object(forKey: LAST_ENTRY_KEY) as! Date
+        }
+        set {
+            
+            UserDefaults.standard.set(newValue, forKey: LAST_ENTRY_KEY)
+        }
+    }
+    
     
     func setupDefaults() {
         // default streak to 0
@@ -82,15 +91,23 @@ class Streak {
         if UserDefaults.standard.object(forKey: LAST_ENTRY_KEY) == nil {
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())!
             UserDefaults.standard.set(yesterday, forKey: LAST_ENTRY_KEY)
+            
         }
         
     }
     
     func checkStreakEnded() {
+        let twoDaysAgo = NSCalendar.current.date(byAdding: .day, value: -2, to: Date())!
         
+        if NSCalendar.current.isDate(twoDaysAgo, inSameDayAs: lastEntry) {
+            streakDays = 0
+        }
     }
     
-    
-    
 }
+
+
+
+
+
 
