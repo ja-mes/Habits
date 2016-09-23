@@ -24,7 +24,12 @@ class Streak {
             return _streakDays
         }
         set {
-            _streakDays = newValue
+            if newValue <= 0 {
+                _streakDays = 0
+            } else {
+                _streakDays = newValue
+            }
+            
             UserDefaults.standard.set(_streakDays, forKey: STREAK_KEY)
         }
     }

@@ -109,8 +109,8 @@
                         <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8rY-Iy-2pm" kind="relationship" relationship="viewControllers" id="EVT-od-BR0"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3ux-Ya-q2p"/>
+                        <segue destination="8rY-Iy-2pm" kind="relationship" relationship="viewControllers" id="EVT-od-BR0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIw-c1-zwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
