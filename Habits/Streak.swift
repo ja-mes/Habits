@@ -26,27 +26,29 @@ class Streak {
         set {
             _streakDays = newValue
             UserDefaults.standard.set(_streakDays, forKey: STREAK_KEY)
+            
+            if _streakDays != 0 {
+                UserDefaults.standard.set(Date(), forKey: LAST_ENTRY_KEY)
+            }
         }
     }
     
     var completedHabits: Int {
         get {
-            if let num = UserDefaults.standard.object(forKey: COMPLETED_KEY) as? Int {
-                _completedHabits = num
+            var num = 0
+            let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
+            let today = NSCalendar.current.startOfDay(for: Date())
+            let datePredicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
+            
+            fetchRequest.predicate = datePredicate
+            
+            do {
+                num = try context.count(for: fetchRequest)
+            } catch {
+                fatalError("Unable to count habits")
             }
             
-            return _completedHabits
-        }
-        set {
-            let total = totalHabits
-            
-            if newValue == total {
-                streakDays += 1
-            } else if _completedHabits == total && newValue != total {
-                streakDays -= 1
-            }
-            _completedHabits = newValue
-            UserDefaults.standard.set(_completedHabits, forKey: COMPLETED_KEY)
+            return num
         }
     }
     
@@ -82,16 +84,10 @@ class Streak {
         }
         
         
-        // default completed to 0
-        if UserDefaults.standard.object(forKey: COMPLETED_KEY) == nil {
-            UserDefaults.standard.set(0, forKey: COMPLETED_KEY)
-        }
-        
         // default last entry to yesterday
         if UserDefaults.standard.object(forKey: LAST_ENTRY_KEY) == nil {
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())!
             UserDefaults.standard.set(yesterday, forKey: LAST_ENTRY_KEY)
-            
         }
         
     }
