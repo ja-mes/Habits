@@ -16,6 +16,8 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loadStreak(notification:)), name: NSNotification.Name(rawValue: "reloadStreak"), object: nil)
+        
         Streak.shared.checkStreakEnded()
 
         collectionView.delegate = self
@@ -27,7 +29,6 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidAppear(true)
         
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
-        collectionView.reloadData()
     }
     
     
@@ -45,6 +46,10 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func loadStreak(notification: NSNotification){
+        self.collectionView.reloadData()
     }
     
 }
