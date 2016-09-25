@@ -31,12 +31,18 @@ class AddTableViewController: UITableViewController {
     
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
-        let habit = Habit(context: context)
+        let item: Habit!
+        
+        if let habit = habit {
+            item = habit
+        } else {
+            item = Habit(context: context)
+        }
         
         if nameValid() {
-            habit.name = nameField.text
+            item.name = nameField.text
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
-            habit.lastEntry = yesterday!
+            item.lastEntry = yesterday!
             
             ad.saveContext()
             
