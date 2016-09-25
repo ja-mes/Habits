@@ -86,7 +86,7 @@
                             <constraint firstItem="BoY-Z2-zNG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="zCB-K5-7Ty"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="HomeIcon" id="9dY-de-hFW"/>
+                    <tabBarItem key="tabBarItem" title="" image="HomeIcon" id="9dY-de-hFW" customClass="CenteredTabBar" customModule="Habits" customModuleProvider="target"/>
                     <navigationItem key="navigationItem" title="Summary" id="kq2-fG-MXO"/>
                     <connections>
                         <outlet property="collectionView" destination="PGd-gL-vaH" id="gsw-yM-tAN"/>
@@ -105,7 +105,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="H81-dV-DAF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
@@ -118,16 +118,18 @@
             </objects>
             <point key="canvasLocation" x="962" y="405"/>
         </scene>
-        <!--Habits-->
+        <!--Navigation Controller-->
         <scene sceneID="OY2-Nl-eUZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rY-Iy-2pm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Habits" image="MenuIcon" id="OSF-Dv-oF7"/>
+                    <tabBarItem key="tabBarItem" title="" image="MenuIcon" id="OSF-Dv-oF7" customClass="CenteredTabBar" customModule="Habits" customModuleProvider="target"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hkj-fc-aj1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hkj-fc-aj1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
