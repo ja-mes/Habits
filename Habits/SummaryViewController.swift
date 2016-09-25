@@ -12,7 +12,6 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var completedLbl: UILabel!
-    @IBOutlet weak var timeRemaining: UILabel!
     
     var numRows: Int!
     
@@ -26,15 +25,6 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        let startOfDay = NSCalendar.current.startOfDay(for: Date())
-
-        var components = DateComponents()
-        components.day = 1
-        components.second = -1
-        
-        let endOfDay = NSCalendar.current.date(byAdding: components, to: startOfDay)
-        
-        timeRemaining.text = "\(Date().hours(from: endOfDay!))"
     }
     
     override func viewDidAppear(_ animated: Bool) {
