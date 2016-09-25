@@ -12,6 +12,7 @@ class AddTableViewController: UITableViewController {
     
     // MARK: variables
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var deleteCell: UITableViewCell!
     
     var habit: Habit?
 
@@ -24,6 +25,7 @@ class AddTableViewController: UITableViewController {
         
         if let habit = habit {
             nameField.text = habit.name
+            deleteCell.isHidden = false
         } else {
             nameField.becomeFirstResponder()
         }
@@ -68,6 +70,16 @@ class AddTableViewController: UITableViewController {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
+    
+    @IBAction func deleteTapped(_ sender: AnyObject) {
+        if let habit = habit {
+            context.delete(habit)
+            ad.saveContext()
+        }
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
     
     // MARK: functions
     func nameValid() -> Bool {

@@ -276,6 +276,34 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="7wF-Vp-MAp">
+                                <cells>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bxW-Yb-sdq">
+                                        <rect key="frame" x="0.0" y="179" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bxW-Yb-sdq" id="sbr-bz-Xib">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQE-Aw-Ux1">
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteTapped:" destination="Et4-jS-ffr" eventType="touchUpInside" id="7c4-9I-KHP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="kQE-Aw-Ux1" secondAttribute="bottom" id="Bcy-L4-rru"/>
+                                                <constraint firstItem="kQE-Aw-Ux1" firstAttribute="leading" secondItem="sbr-bz-Xib" secondAttribute="leading" constant="15" id="eYC-0v-AR6"/>
+                                                <constraint firstAttribute="trailing" secondItem="kQE-Aw-Ux1" secondAttribute="trailing" id="rO9-r2-145"/>
+                                                <constraint firstItem="kQE-Aw-Ux1" firstAttribute="top" secondItem="sbr-bz-Xib" secondAttribute="top" id="z4H-Td-4Ri"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Et4-jS-ffr" id="XiX-3N-m4I"/>
@@ -295,6 +323,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteCell" destination="bxW-Yb-sdq" id="oZd-N4-qSe"/>
                         <outlet property="nameField" destination="TEN-tY-a8r" id="heh-bI-YI8"/>
                     </connections>
                 </tableViewController>
