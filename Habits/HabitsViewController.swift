@@ -25,11 +25,27 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchHabits()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HabitDetail" {
+            if let destination = segue.destination as? AddTableViewController {
+                if let habit = sender as? Habit {
+                    destination.habit = habit
+                }
+            }
+        }
+    }
+    
+    
     // MARK: IBActions
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         fetchHabits()
         tableView.reloadData()
     }
+    
+    @IBAction func addPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "HabitDetail", sender: nil)
+    }
+    
     
     // MARK: table protocols
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -10,8 +10,13 @@ import UIKit
 
 class AddTableViewController: UITableViewController {
     
+    // MARK: variables
     @IBOutlet weak var nameField: UITextField!
+    
+    var habit: Habit?
 
+    
+    // MARK: setup methods
     override func viewDidLoad() {
         super.viewDidLoad()
         

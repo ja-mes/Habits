@@ -229,13 +229,14 @@
                     <navigationItem key="navigationItem" title="Habits" id="r4U-SA-jK2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CJJ-Jx-bOe">
                             <connections>
-                                <segue destination="Et4-jS-ffr" kind="show" id="aTZ-Pa-Xxd"/>
+                                <action selector="addPressed:" destination="mRv-Cm-alo" id="ZkO-7v-RDa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segment" destination="SK3-Fj-GhX" id="Caq-KF-GCR"/>
                         <outlet property="tableView" destination="NDB-EV-tQP" id="1So-cI-wQR"/>
+                        <segue destination="Et4-jS-ffr" kind="show" identifier="HabitDetail" id="Dvf-RX-wRY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAX-ks-vTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
