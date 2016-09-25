@@ -21,7 +21,12 @@ class AddTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem?.isEnabled = false
-        nameField.becomeFirstResponder()
+        
+        if let habit = habit {
+            nameField.text = habit.name
+        } else {
+            nameField.becomeFirstResponder()
+        }
     }
     
     // MARK: IBActions
