@@ -10,6 +10,7 @@ import UIKit
 
 class SummaryViewController: UIViewController {
     @IBOutlet weak var completedLbl: UILabel!
+    @IBOutlet weak var streakCount: UILabel!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class SummaryViewController: UIViewController {
         super.viewDidAppear(true)
         
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
+        streakCount.text = "\(Streak.shared.streakDays)"
     }
     
 }
