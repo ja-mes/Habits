@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SummaryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var completedLbl: UILabel!
@@ -22,7 +22,6 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,7 +36,7 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Streak.shared.streakDays
+        return Streak.shared.streakDays + 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,6 +46,8 @@ class SummaryViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         return UICollectionViewCell()
     }
+    
+    
     
     func loadStreak(notification: NSNotification){
         self.collectionView.reloadData()

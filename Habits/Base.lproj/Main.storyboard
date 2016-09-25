@@ -41,17 +41,17 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PGd-gL-vaH">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ACR-Vb-vIq">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="333" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="10" maxX="5" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StreakCell" id="MBp-xG-Ykp" customClass="StreakCollectionViewCell" customModule="Habits" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="5" y="10" width="333" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-1a-knY">
@@ -63,10 +63,9 @@
                                         </view>
                                         <color key="backgroundColor" red="0.61176470588235299" green="0.90196078431372551" blue="0.52156862745098043" alpha="0.87" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="S5a-1a-knY" firstAttribute="centerY" secondItem="MBp-xG-Ykp" secondAttribute="centerY" id="bgX-9T-1xl"/>
-                                            <constraint firstItem="S5a-1a-knY" firstAttribute="centerX" secondItem="MBp-xG-Ykp" secondAttribute="centerX" id="kC7-3b-2oR"/>
+                                            <constraint firstItem="S5a-1a-knY" firstAttribute="centerX" secondItem="MBp-xG-Ykp" secondAttribute="centerX" id="uSX-Ga-arK"/>
+                                            <constraint firstItem="S5a-1a-knY" firstAttribute="centerY" secondItem="MBp-xG-Ykp" secondAttribute="centerY" id="yAi-eq-t6E"/>
                                         </constraints>
-                                        <size key="customSize" width="45" height="45"/>
                                         <connections>
                                             <outlet property="numLabel" destination="S5a-1a-knY" id="oHz-Bv-pi5"/>
                                         </connections>
@@ -86,7 +85,9 @@
                             <constraint firstItem="BoY-Z2-zNG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="zCB-K5-7Ty"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="HomeIcon" id="JiW-Ne-hGf"/>
+                    <tabBarItem key="tabBarItem" title="" image="HomeIcon" id="JiW-Ne-hGf">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Habits" id="kq2-fG-MXO"/>
                     <connections>
                         <outlet property="collectionView" destination="PGd-gL-vaH" id="gsw-yM-tAN"/>
@@ -95,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="38"/>
+            <point key="canvasLocation" x="1960.8" y="37.331334332833585"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="75m-dS-HfQ">
@@ -105,7 +106,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="H81-dV-DAF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
@@ -117,11 +120,13 @@
             </objects>
             <point key="canvasLocation" x="962" y="405"/>
         </scene>
-        <!--Habits-->
+        <!--Navigation Controller-->
         <scene sceneID="OY2-Nl-eUZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rY-Iy-2pm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Habits" image="MenuIcon" id="OSF-Dv-oF7"/>
+                    <tabBarItem key="tabBarItem" title="" image="MenuIcon" id="OSF-Dv-oF7">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hkj-fc-aj1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
