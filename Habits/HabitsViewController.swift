@@ -74,6 +74,10 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "HabitDetail", sender: controller.object(at: indexPath))
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
             self.markAsDone(indexPath: indexPath)
