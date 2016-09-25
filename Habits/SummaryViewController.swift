@@ -9,8 +9,6 @@
 import UIKit
 
 class SummaryViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
-
     @IBOutlet weak var completedLbl: UILabel!
         
     override func viewDidLoad() {
