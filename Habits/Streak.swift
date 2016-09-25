@@ -103,7 +103,6 @@ class Streak {
             lastEntry = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())!
         }
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadStreak"), object: nil)
     }
     
     func checkStreakEnded() {
