@@ -71,7 +71,7 @@ class AddTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func deleteTapped(_ sender: AnyObject) {
+    @IBAction func deleteTapped(_ sender: UIButton) {
         if let habit = habit {
             context.delete(habit)
             ad.saveContext()
