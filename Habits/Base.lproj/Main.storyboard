@@ -86,6 +86,7 @@
                             <constraint firstItem="BoY-Z2-zNG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="zCB-K5-7Ty"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="HomeIcon" id="9dY-de-hFW"/>
                     <navigationItem key="navigationItem" title="Summary" id="kq2-fG-MXO"/>
                     <connections>
                         <outlet property="collectionView" destination="PGd-gL-vaH" id="gsw-yM-tAN"/>
@@ -94,26 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2900" y="36.431784107946029"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="4oR-3U-6tg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHI-qY-Zyq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="HomeIcon" id="YDU-Xa-a4e"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="juH-AA-U6p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6Wh-bX-M3Y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CCK-uB-Ugk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1960.8" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1961" y="38"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="75m-dS-HfQ">
@@ -128,7 +110,7 @@
                         <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bHI-qY-Zyq" kind="relationship" relationship="viewControllers" id="maw-zi-CIe"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="jCa-oz-XBw"/>
                         <segue destination="8rY-Iy-2pm" kind="relationship" relationship="viewControllers" id="EVT-od-BR0"/>
                     </connections>
                 </tabBarController>
