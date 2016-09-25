@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9k0-LM-3SW">
@@ -37,7 +37,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0V5-zM-JFF" customClass="CircleView" customModule="Habits" customModuleProvider="target">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQJ-7F-zID">
-                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="80"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="100"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -46,18 +46,63 @@
                                 <constraints>
                                     <constraint firstItem="RQJ-7F-zID" firstAttribute="centerY" secondItem="0V5-zM-JFF" secondAttribute="centerY" id="BPc-R0-kkM"/>
                                     <constraint firstAttribute="width" secondItem="0V5-zM-JFF" secondAttribute="height" multiplier="1:1" id="CD7-yk-iRu"/>
+                                    <constraint firstAttribute="width" constant="400" id="EFp-3b-e3T"/>
+                                    <constraint firstAttribute="height" constant="400" id="aiz-mt-ecl"/>
+                                    <constraint firstAttribute="width" constant="250" id="pRl-Rr-Ufh">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="240"/>
+                                    </constraint>
                                     <constraint firstItem="RQJ-7F-zID" firstAttribute="centerX" secondItem="0V5-zM-JFF" secondAttribute="centerX" id="vNf-b0-f12"/>
+                                    <constraint firstAttribute="height" constant="250" id="xlJ-nO-fcU">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="240"/>
+                                    </constraint>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EFp-3b-e3T"/>
+                                        <exclude reference="aiz-mt-ecl"/>
+                                        <exclude reference="pRl-Rr-Ufh"/>
+                                        <exclude reference="xlJ-nO-fcU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="CD7-yk-iRu"/>
+                                        <include reference="pRl-Rr-Ufh"/>
+                                        <include reference="xlJ-nO-fcU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="CD7-yk-iRu"/>
+                                        <include reference="EFp-3b-e3T"/>
+                                        <include reference="aiz-mt-ecl"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9k0-LM-3SW" firstAttribute="top" secondItem="0V5-zM-JFF" secondAttribute="bottom" constant="60" id="05h-02-yin"/>
+                            <constraint firstItem="9k0-LM-3SW" firstAttribute="top" secondItem="0V5-zM-JFF" secondAttribute="bottom" constant="60" id="05h-02-yin">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="0V5-zM-JFF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Gd-Je-raX"/>
                             <constraint firstItem="9k0-LM-3SW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aug-qJ-BnP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0V5-zM-JFF" secondAttribute="trailing" constant="50" id="lzt-0z-oFq"/>
                             <constraint firstItem="0V5-zM-JFF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="rwd-Ih-4sV"/>
                             <constraint firstItem="0V5-zM-JFF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="sJ6-Jc-h7n"/>
                         </constraints>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="lzt-0z-oFq"/>
+                                <exclude reference="rwd-Ih-4sV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="lzt-0z-oFq"/>
+                                <exclude reference="rwd-Ih-4sV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="HomeIcon" id="JiW-Ne-hGf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
@@ -124,7 +169,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vtD-KR-03P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yE7-hg-ENT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-Fj-GhX">
@@ -141,14 +186,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HabitCell" textLabel="IUS-SF-mm6" style="IBUITableViewCellStyleDefault" id="N40-kz-jFE">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N40-kz-jFE" id="H9C-k2-FtB">
-                                            <frame key="frameInset" width="342" height="43.5"/>
+                                            <frame key="frameInset" width="702" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IUS-SF-mm6">
-                                                    <frame key="frameInset" minX="15" width="325" height="43.5"/>
+                                                    <frame key="frameInset" minX="48" width="654" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -192,17 +237,17 @@
             <objects>
                 <tableViewController id="Et4-jS-ffr" customClass="AddTableViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="UuS-UT-6Zd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="y2A-4w-9Gm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dcL-uw-o4l">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcL-uw-o4l" id="3jK-qg-RCv">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="768" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-tY-a8r">
