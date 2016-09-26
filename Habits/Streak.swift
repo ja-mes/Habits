@@ -92,6 +92,23 @@ class Streak {
         
     }
     
+    func markAsDone(habit: Habit) {
+        habit.lastEntry = Date()
+        ad.saveContext()
+        
+        checkStreakCompleted(inc: true)
+    }
+    
+    func markAsNotDone(habit: Habit) {
+        if let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date()) {
+            habit.lastEntry = yesterday
+            ad.saveContext()
+            
+            checkStreakCompleted(inc: false)
+        }
+    }
+    
+    
     func checkStreakCompleted(inc: Bool) {
         checkStreakEnded()
         

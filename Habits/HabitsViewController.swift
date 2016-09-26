@@ -80,12 +80,14 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
-            self.markAsDone(indexPath: indexPath)
+            let habit = self.controller.object(at: indexPath)
+            Streak.shared.markAsDone(habit: habit)
         }
         done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
         
         let notDone = UITableViewRowAction(style: .normal, title: "Not Done") { action, index in
-            self.markAsNotDone(indexPath: indexPath)
+            let habit = self.controller.object(at: indexPath)
+            Streak.shared.markAsNotDone(habit: habit)
         }
         notDone.backgroundColor = UIColor.gray
         
@@ -185,26 +187,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let habit = controller.object(at: indexPath)
         cell.textLabel?.text = habit.name
     }
-    
-    func markAsDone(indexPath: IndexPath) {
-        let habit = controller.object(at: indexPath)
-        habit.lastEntry = Date()
-        ad.saveContext()
-        
-        Streak.shared.checkStreakCompleted(inc: true)
-    }
-    
-    func markAsNotDone(indexPath: IndexPath) {
-        let habit = controller.object(at: indexPath)
-        
-        if let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date()) {
-            habit.lastEntry = yesterday
-            ad.saveContext()
-            
-            Streak.shared.checkStreakCompleted(inc: false)
-        }
-    }
-
 }
 
 
