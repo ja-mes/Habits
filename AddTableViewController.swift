@@ -13,6 +13,8 @@ class AddTableViewController: UITableViewController {
     // MARK: variables
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var deleteCell: UITableViewCell!
+    @IBOutlet weak var doneCell: UITableViewCell!
+    @IBOutlet weak var skipCell: UITableViewCell!
     
     var habit: Habit?
 
@@ -26,7 +28,15 @@ class AddTableViewController: UITableViewController {
         if let habit = habit {
             nameField.text = habit.name
             deleteCell.isHidden = false
-        } else {
+            doneCell.isHidden = false
+            skipCell.isHidden = false
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if habit == nil {
             nameField.becomeFirstResponder()
         }
     }
@@ -78,6 +88,9 @@ class AddTableViewController: UITableViewController {
         }
         
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func doneTapped(_ sender: UIButton) {
     }
     
     
