@@ -88,6 +88,8 @@ class Streak {
     }
     
     func checkStreakCompleted(inc: Bool) {
+        checkStreakEnded()
+        
         if inc && totalHabits == completedHabits {
             streakDays += 1
             lastEntry = Date()
@@ -103,6 +105,7 @@ class Streak {
         if NSCalendar.current.isDate(twoDaysAgo, inSameDayAs: lastEntry) {
             streakDays = 0
         }
+
     }
     
 }

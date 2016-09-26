@@ -19,13 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Streak.shared.setupDefaults()
         
-        // navbar
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
-        
         return true
     }
 

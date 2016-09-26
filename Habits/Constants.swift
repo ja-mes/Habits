@@ -6,8 +6,9 @@
 //  Copyright © 2016 James Brown. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let STREAK_KEY = "streak"
 let COMPLETED_KEY = "completed"
 let LAST_ENTRY_KEY = "streak_last_entry"
+let SHADOW_GREY: CGFloat = 120.0 / 255.0

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Summary-->
+        <!--Habits-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SummaryViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,8 +86,8 @@
                             <constraint firstItem="BoY-Z2-zNG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="zCB-K5-7Ty"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="HomeIcon" id="9dY-de-hFW" customClass="CenteredTabBar" customModule="Habits" customModuleProvider="target"/>
-                    <navigationItem key="navigationItem" title="Summary" id="kq2-fG-MXO"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeIcon" id="JiW-Ne-hGf"/>
+                    <navigationItem key="navigationItem" title="Habits" id="kq2-fG-MXO"/>
                     <connections>
                         <outlet property="collectionView" destination="PGd-gL-vaH" id="gsw-yM-tAN"/>
                         <outlet property="completedLbl" destination="SI8-fX-fou" id="OPc-xi-iJ1"/>
@@ -105,31 +105,28 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="H81-dV-DAF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="jCa-oz-XBw"/>
                         <segue destination="8rY-Iy-2pm" kind="relationship" relationship="viewControllers" id="EVT-od-BR0"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3ux-Ya-q2p"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIw-c1-zwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962" y="405"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Habits-->
         <scene sceneID="OY2-Nl-eUZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rY-Iy-2pm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="MenuIcon" id="OSF-Dv-oF7" customClass="CenteredTabBar" customModule="Habits" customModuleProvider="target"/>
+                    <tabBarItem key="tabBarItem" title="Habits" image="MenuIcon" id="OSF-Dv-oF7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hkj-fc-aj1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
