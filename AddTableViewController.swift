@@ -67,13 +67,8 @@ class AddTableViewController: UITableViewController {
             item.lastEntry = yesterday!
             
             ad.saveContext()
-            
-            let total = Streak.shared.totalHabits
-            let completed = Streak.shared.completedHabits
-            
-            if Streak.shared.streakDays != 0 && completed >= total - 1 {
-                Streak.shared.streakDays -= 1
-            }
+
+            Streak.shared.checkStreakCompleted(inc: false)
         }
         
         _ = navigationController?.popViewController(animated: true)
@@ -93,8 +88,7 @@ class AddTableViewController: UITableViewController {
     
     @IBAction func deleteTapped(_ sender: UIButton) {
         if let habit = habit {
-            context.delete(habit)
-            ad.saveContext()
+            Streak.shared.deleteHabit(habit: habit)
         }
         
         _ = navigationController?.popViewController(animated: true)
