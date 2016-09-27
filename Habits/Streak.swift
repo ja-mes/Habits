@@ -119,6 +119,12 @@ class Streak {
         return true
     }
     
+    func deleteHabit(habit: Habit) {
+        context.delete(habit)
+        ad.saveContext()
+        checkStreakCompleted(inc: true)
+    }
+    
     
     func checkStreakCompleted(inc: Bool) {
         checkStreakEnded()
