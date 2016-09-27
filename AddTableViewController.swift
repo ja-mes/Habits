@@ -11,6 +11,7 @@ import UIKit
 class AddTableViewController: UITableViewController {
     
     // MARK: variables
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
@@ -30,6 +31,15 @@ class AddTableViewController: UITableViewController {
             deleteCell.isHidden = false
             doneCell.isHidden = false
             skipCell.isHidden = false
+        }
+                
+        if let habit = habit {
+            
+            if Streak.shared.checkHabitDone(habit: habit) {
+                doneButton.setTitle("Not Done", for: .normal)
+            } else {
+                doneButton.setTitle("Done", for: .normal)
+            }
         }
     }
     
@@ -92,7 +102,13 @@ class AddTableViewController: UITableViewController {
     
     @IBAction func doneTapped(_ sender: UIButton) {
         if let habit = habit {
-            Streak.shared.markAsDone(habit: habit)
+            if Streak.shared.checkHabitDone(habit: habit) {
+                Streak.shared.markAsNotDone(habit: habit)
+            } else {
+                Streak.shared.markAsDone(habit: habit)
+            }
+            
+            _ = navigationController?.popViewController(animated: true)
         }
     }
     

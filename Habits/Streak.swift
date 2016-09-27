@@ -108,6 +108,17 @@ class Streak {
         }
     }
     
+    func checkHabitDone(habit: Habit) -> Bool {
+        let today = NSCalendar.current.startOfDay(for: Date())
+        let compare = NSCalendar.current.compare(today, to: habit.lastEntry, toGranularity: .nanosecond).rawValue
+        
+        if compare == 1 {
+            return false
+        }
+        
+        return true
+    }
+    
     
     func checkStreakCompleted(inc: Bool) {
         checkStreakEnded()
