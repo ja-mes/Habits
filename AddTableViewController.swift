@@ -91,7 +91,9 @@ class AddTableViewController: UITableViewController {
     }
     
     @IBAction func doneTapped(_ sender: UIButton) {
-        
+        if let habit = habit {
+            Streak.shared.markAsDone(habit: habit)
+        }
     }
     
     
