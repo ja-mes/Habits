@@ -316,7 +316,7 @@
             </objects>
             <point key="canvasLocation" x="2862" y="725"/>
         </scene>
-        <!--Add Item-->
+        <!--Habit-->
         <scene sceneID="Ftw-eb-Mm0">
             <objects>
                 <tableViewController id="Et4-jS-ffr" customClass="AddTableViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
@@ -435,7 +435,7 @@
                             <outlet property="delegate" destination="Et4-jS-ffr" id="7qK-ex-y8A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Item" id="N3V-gB-w5E">
+                    <navigationItem key="navigationItem" title="Habit" id="N3V-gB-w5E">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yCm-zH-Xvu" customClass="CustomBarButtonItem" customModule="Habits" customModuleProvider="target">
                             <connections>
                                 <action selector="cancelTapped:" destination="Et4-jS-ffr" id="May-aH-dLW"/>

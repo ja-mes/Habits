@@ -31,7 +31,7 @@ class ColorsViewController: UIViewController, UITableViewDataSource, UITableView
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ColorCell") as? ColorTableViewCell {
             
             cell.background.backgroundColor = colors[indexPath.row]
-            cell.descLbl.text = "\(labels[indexPath.row]) days"
+            cell.descLbl.text = "\(days[indexPath.row]) days"
             
             return cell
         }
