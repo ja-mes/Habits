@@ -10,6 +10,10 @@ import UIKit
 
 class ColorTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descLbl: UILabel!
+    @IBOutlet weak var background: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
