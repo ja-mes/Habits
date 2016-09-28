@@ -21,8 +21,6 @@ class SummaryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-
-        Streak.shared.streakDays = 3
         
         let streak = Streak.shared.streakDays
 
