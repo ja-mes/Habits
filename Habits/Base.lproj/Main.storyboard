@@ -482,6 +482,7 @@
                         <outlet property="doneCell" destination="az2-DP-4Bk" id="sGl-7a-eEL"/>
                         <outlet property="nameField" destination="TEN-tY-a8r" id="heh-bI-YI8"/>
                         <outlet property="notesCell" destination="bxW-Yb-sdq" id="DiC-yX-M08"/>
+                        <outlet property="numNotesLbl" destination="req-gK-8EE" id="vqD-AF-fN2"/>
                         <outlet property="skipCell" destination="0La-QI-3Vt" id="avD-Fu-drq"/>
                     </connections>
                 </tableViewController>

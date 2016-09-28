@@ -17,6 +17,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var doneCell: UITableViewCell!
     @IBOutlet weak var skipCell: UITableViewCell!
     @IBOutlet weak var notesCell: UITableViewCell!
+    @IBOutlet weak var numNotesLbl: UILabel!
     
     var habit: Habit?
 
@@ -36,7 +37,6 @@ class AddTableViewController: UITableViewController {
         }
                 
         if let habit = habit {
-            
             if Streak.shared.checkHabitDone(habit: habit) {
                 doneButton.setTitle("Not Done", for: .normal)
             } else {
