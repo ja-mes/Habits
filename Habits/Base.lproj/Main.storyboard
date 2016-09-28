@@ -111,7 +111,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="HomeIcon" id="JiW-Ne-hGf">
+                    <tabBarItem key="tabBarItem" title="" image="home-icon" id="JiW-Ne-hGf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Habits" id="kq2-fG-MXO"/>
@@ -140,6 +140,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3ux-Ya-q2p"/>
                         <segue destination="8rY-Iy-2pm" kind="relationship" relationship="viewControllers" id="EVT-od-BR0"/>
+                        <segue destination="M9M-XB-KLj" kind="relationship" relationship="viewControllers" id="4c3-TC-Jln"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIw-c1-zwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,7 +151,7 @@
         <scene sceneID="OY2-Nl-eUZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rY-Iy-2pm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="MenuIcon" id="OSF-Dv-oF7">
+                    <tabBarItem key="tabBarItem" title="" image="list-icon" id="OSF-Dv-oF7">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -170,6 +171,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYo-Ht-R3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1961" y="725"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iGL-tg-z05">
+            <objects>
+                <viewController id="M9M-XB-KLj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uE2-k5-u1a"/>
+                        <viewControllerLayoutGuide type="bottom" id="h1Z-nl-QOK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dQK-y8-JJE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="settings-icon" id="bct-zE-3DE">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hy4-es-E1q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="1446"/>
         </scene>
         <!--Habits-->
         <scene sceneID="BWh-MQ-B7r">
@@ -242,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAX-ks-vTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2900" y="724.58770614692662"/>
+            <point key="canvasLocation" x="2862" y="725"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="Ftw-eb-Mm0">
@@ -389,7 +411,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HomeIcon" width="25" height="25"/>
-        <image name="MenuIcon" width="27" height="19"/>
+        <image name="home-icon" width="24" height="27"/>
+        <image name="list-icon" width="29" height="28"/>
+        <image name="settings-icon" width="29" height="30"/>
     </resources>
 </document>
