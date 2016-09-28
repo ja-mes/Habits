@@ -53,6 +53,13 @@ class AddTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let staticIndexPath = tableView.indexPath(for: self.notesCell), staticIndexPath == indexPath {
+            performSegue(withIdentifier: "NotesViewController", sender: nil)
+        }
+    }
+
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         let item: Habit!
