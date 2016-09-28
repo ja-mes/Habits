@@ -16,6 +16,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
     @IBOutlet weak var skipCell: UITableViewCell!
+    @IBOutlet weak var notesCell: UITableViewCell!
     
     var habit: Habit?
 
@@ -31,6 +32,7 @@ class AddTableViewController: UITableViewController {
             deleteCell.isHidden = false
             doneCell.isHidden = false
             skipCell.isHidden = false
+            notesCell.isHidden = false
         }
                 
         if let habit = habit {

@@ -403,7 +403,7 @@
                             </tableViewSection>
                             <tableViewSection id="7wF-Vp-MAp">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6rU-hI-Gf5" detailTextLabel="req-gK-8EE" style="IBUITableViewCellStyleValue1" id="bxW-Yb-sdq">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6rU-hI-Gf5" detailTextLabel="req-gK-8EE" style="IBUITableViewCellStyleValue1" id="bxW-Yb-sdq">
                                         <rect key="frame" x="0.0" y="303" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bxW-Yb-sdq" id="sbr-bz-Xib">
@@ -481,6 +481,7 @@
                         <outlet property="doneButton" destination="g8L-So-bqJ" id="pWP-6L-0Qz"/>
                         <outlet property="doneCell" destination="az2-DP-4Bk" id="sGl-7a-eEL"/>
                         <outlet property="nameField" destination="TEN-tY-a8r" id="heh-bI-YI8"/>
+                        <outlet property="notesCell" destination="bxW-Yb-sdq" id="DiC-yX-M08"/>
                         <outlet property="skipCell" destination="0La-QI-3Vt" id="avD-Fu-drq"/>
                     </connections>
                 </tableViewController>
