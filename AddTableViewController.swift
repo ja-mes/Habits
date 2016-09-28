@@ -16,8 +16,6 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
     @IBOutlet weak var skipCell: UITableViewCell!
-    @IBOutlet weak var notesCell: UITableViewCell!
-    @IBOutlet weak var numNotesLbl: UILabel!
     
     var habit: Habit?
 
@@ -33,7 +31,6 @@ class AddTableViewController: UITableViewController {
             deleteCell.isHidden = false
             doneCell.isHidden = false
             skipCell.isHidden = false
-            notesCell.isHidden = false
         }
                 
         if let habit = habit {
@@ -53,13 +50,6 @@ class AddTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let staticIndexPath = tableView.indexPath(for: self.notesCell), staticIndexPath == indexPath {
-            performSegue(withIdentifier: "NotesViewController", sender: nil)
-        }
-    }
-
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         let item: Habit!
