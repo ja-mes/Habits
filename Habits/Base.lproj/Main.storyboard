@@ -189,14 +189,15 @@
                                 <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hLo-6E-8wO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hLo-6E-8wO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ColorCell" rowHeight="90" id="a4S-0H-56x">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a4S-0H-56x" id="lA5-HF-h51">
-                                            <frame key="frameInset" width="375" height="89.5"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 days, 15 to go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heD-fx-b4i">
@@ -211,6 +212,7 @@
                                                 <constraint firstItem="heD-fx-b4i" firstAttribute="centerX" secondItem="lA5-HF-h51" secondAttribute="centerX" id="b3N-Zi-uvH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -225,7 +227,7 @@
                             <constraint firstItem="hLo-6E-8wO" firstAttribute="top" secondItem="N9O-nW-n9Z" secondAttribute="bottom" constant="20" id="avK-p9-6li"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="settings-icon" id="nDY-6v-pzg">
+                    <tabBarItem key="tabBarItem" title="" image="dimond-icon" id="nDY-6v-pzg">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <connections>
@@ -454,8 +456,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dimond-icon" width="29" height="26"/>
         <image name="home-icon" width="24" height="27"/>
         <image name="list-icon" width="29" height="28"/>
-        <image name="settings-icon" width="29" height="30"/>
     </resources>
 </document>
