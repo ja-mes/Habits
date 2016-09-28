@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B55E6771D9B44450095A098 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */; };
 		9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */; };
 		9B6261D11D987D95008962C8 /* BoldBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */; };
 		9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE93F1D92109D005F11D3 /* Streak.swift */; };
-		9B7AE9421D9307D0005F11D3 /* StreakCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE9411D9307D0005F11D3 /* StreakCollectionViewCell.swift */; };
 		9B7AE9441D941477005F11D3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE9431D941477005F11D3 /* Extension.swift */; };
 		9B7AE94A1D986FD0005F11D3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE9491D986FD0005F11D3 /* CircleView.swift */; };
 		9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */; };
@@ -28,10 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldBarButtonItem.swift; sourceTree = "<group>"; };
 		9B7AE93F1D92109D005F11D3 /* Streak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
-		9B7AE9411D9307D0005F11D3 /* StreakCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B7AE9431D941477005F11D3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9B7AE9491D986FD0005F11D3 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
@@ -125,10 +125,10 @@
 		9BB7627F1D85F9E700D4A004 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9B7AE9411D9307D0005F11D3 /* StreakCollectionViewCell.swift */,
 				9B7AE9491D986FD0005F11D3 /* CircleView.swift */,
 				9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */,
 				9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */,
+				9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -221,10 +221,10 @@
 				9BB607671D8F144400421825 /* AddTableViewController.swift in Sources */,
 				9BB7626A1D85F91200D4A004 /* AppDelegate.swift in Sources */,
 				9BB762721D85F91200D4A004 /* Habits.xcdatamodeld in Sources */,
+				9B55E6771D9B44450095A098 /* ColorTableViewCell.swift in Sources */,
 				9B7AE9441D941477005F11D3 /* Extension.swift in Sources */,
 				9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */,
 				9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */,
-				9B7AE9421D9307D0005F11D3 /* StreakCollectionViewCell.swift in Sources */,
 				9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */,
 				9BD6A14C1D9B3EA3004BF534 /* ColorsViewController.swift in Sources */,
 				9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */,
