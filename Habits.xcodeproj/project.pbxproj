@@ -24,6 +24,7 @@
 		9BB762721D85F91200D4A004 /* Habits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BB762701D85F91200D4A004 /* Habits.xcdatamodeld */; };
 		9BB762741D85F91200D4A004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB762731D85F91200D4A004 /* Assets.xcassets */; };
 		9BB762771D85F91200D4A004 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB762751D85F91200D4A004 /* LaunchScreen.storyboard */; };
+		9BD6A14C1D9B3EA3004BF534 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6A14B1D9B3EA3004BF534 /* ColorsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9BB762731D85F91200D4A004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BB762761D85F91200D4A004 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BB762781D85F91200D4A004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD6A14B1D9B3EA3004BF534 /* ColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */,
 				9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */,
 				9BB607661D8F144400421825 /* AddTableViewController.swift */,
+				9BD6A14B1D9B3EA3004BF534 /* ColorsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */,
 				9B7AE9421D9307D0005F11D3 /* StreakCollectionViewCell.swift in Sources */,
 				9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */,
+				9BD6A14C1D9B3EA3004BF534 /* ColorsViewController.swift in Sources */,
 				9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */,
 				9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */,
 				9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */,

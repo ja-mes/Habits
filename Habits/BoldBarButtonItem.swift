@@ -11,9 +11,9 @@ import UIKit
 class BoldBarButtonItem: UIBarButtonItem {
     override func awakeFromNib() {
         
-        if let font = UIFont(name: "AvenirNext-Medium", size: 17) {
+        if let font = UIFont(name: "AvenirNext-Medium", size: 18) {
             self.setTitleTextAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
-            self.setTitleTextAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.gray], for: UIControlState.disabled)
+            self.setTitleTextAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.lightGray], for: UIControlState.disabled)
         }
     }
 }

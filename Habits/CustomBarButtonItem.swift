@@ -11,7 +11,7 @@ import UIKit
 class CustomBarButtonItem: UIBarButtonItem {
     override func awakeFromNib() {
         
-        if let font = UIFont(name: "Avenir Next", size: 17) {
+        if let font = UIFont(name: "Avenir Next", size: 18) {
             self.setTitleTextAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
             self.setTitleTextAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.gray], for: UIControlState.disabled)
         }
