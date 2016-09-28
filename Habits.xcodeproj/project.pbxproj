@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B55E6771D9B44450095A098 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */; };
+		9B55E6791D9C75980095A098 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55E6781D9C75980095A098 /* NotesViewController.swift */; };
 		9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */; };
 		9B6261D11D987D95008962C8 /* BoldBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */; };
 		9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE93F1D92109D005F11D3 /* Streak.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		9B55E6781D9C75980095A098 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldBarButtonItem.swift; sourceTree = "<group>"; };
 		9B7AE93F1D92109D005F11D3 /* Streak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				9BB762691D85F91200D4A004 /* AppDelegate.swift */,
 				9BB762751D85F91200D4A004 /* LaunchScreen.storyboard */,
 				9BB7626D1D85F91200D4A004 /* Main.storyboard */,
+				9B55E6781D9C75980095A098 /* NotesViewController.swift */,
 				9BB762781D85F91200D4A004 /* Info.plist */,
 				9BB762701D85F91200D4A004 /* Habits.xcdatamodeld */,
 				9BB762731D85F91200D4A004 /* Assets.xcassets */,
@@ -228,6 +231,7 @@
 				9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */,
 				9BD6A14C1D9B3EA3004BF534 /* ColorsViewController.swift in Sources */,
 				9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */,
+				9B55E6791D9C75980095A098 /* NotesViewController.swift in Sources */,
 				9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */,
 				9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */,
 				9B6261D11D987D95008962C8 /* BoldBarButtonItem.swift in Sources */,
