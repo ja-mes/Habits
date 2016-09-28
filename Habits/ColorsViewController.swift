@@ -12,6 +12,9 @@ class ColorsViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
+    //var hasFoundCurrentBlock = false
+    var indexOfBlock: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +35,35 @@ class ColorsViewController: UIViewController, UITableViewDataSource, UITableView
             
             cell.background.backgroundColor = colors[indexPath.row]
             cell.descLbl.text = "\(days[indexPath.row]) days"
+
+            if indexOfBlock != nil {
+                if indexPath.row == indexOfBlock {
+                    cell.descLbl.text = "Your here!"
+                }
+            } else {
+                let streak = Streak.shared.streakDays
+                let day = days[indexPath.row]
+                
+                if indexPath.row == 0 {
+                    if streak < days[1] {
+                        cell.descLbl.text = "Your here!"
+                        indexOfBlock = indexPath.row
+                    }
+                } else if indexPath.row == 8 {
+                    if streak >= days[days.count - 1] {
+                        cell.descLbl.text = "Your here!"
+                        indexOfBlock = indexPath.row
+                    }
+                } else {
+                    let nextDay = days[indexPath.row + 1]
+                    let previousDay = days[indexPath.row - 1]
+                    
+                    if streak < nextDay && streak > previousDay || streak == day {
+                        cell.descLbl.text = "Your here!"
+                        indexOfBlock = indexPath.row
+                    }
+                }
+            }
             
             return cell
         }
