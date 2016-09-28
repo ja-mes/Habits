@@ -116,6 +116,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Habits" id="kq2-fG-MXO"/>
                     <connections>
+                        <outlet property="circle" destination="0V5-zM-JFF" id="Hc5-QR-1Tk"/>
                         <outlet property="completedLbl" destination="SI8-fX-fou" id="OPc-xi-iJ1"/>
                         <outlet property="streakCount" destination="RQJ-7F-zID" id="zI8-0N-qG8"/>
                     </connections>

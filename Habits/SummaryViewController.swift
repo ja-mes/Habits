@@ -11,6 +11,7 @@ import UIKit
 class SummaryViewController: UIViewController {
     @IBOutlet weak var completedLbl: UILabel!
     @IBOutlet weak var streakCount: UILabel!
+    @IBOutlet weak var circle: CircleView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,25 @@ class SummaryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+
+        Streak.shared.streakDays = 3
         
+        let streak = Streak.shared.streakDays
+
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
-        streakCount.text = "\(Streak.shared.streakDays)"
+        streakCount.text = "\(streak)"
+        
+        for (i, _) in days.enumerated() {
+            if i + 1 == days.count {
+                circle.backgroundColor = colors[i]
+                break
+            } else {
+                if streak < days[i + 1] {
+                    circle.backgroundColor = colors[i]
+                    break
+                }
+            }
+        }
     }
     
 }
