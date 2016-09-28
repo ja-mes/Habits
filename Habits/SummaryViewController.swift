@@ -22,9 +22,7 @@ class SummaryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let streak = Streak.shared.streakDays
-        
-        Streak.shared.streakDays = 1000
+        let streak = Streak.shared.streakDaysg
 
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
         streakCount.text = "\(streak)"
