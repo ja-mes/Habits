@@ -109,6 +109,19 @@ class AddTableViewController: UITableViewController {
                 Streak.shared.markAsDone(habit: habit)
             }
             
+            if UserDefaults.standard.object(forKey: "user_info_swipe_table") == nil {
+                let alert = UIAlertController(title: "You can also mark habits as done by swiping left on them in the table.", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    UserDefaults.standard.set(true, forKey: "user_info_swipe_table")
+                    self.dismiss(animated: true, completion: nil)
+                    _ = self.navigationController?.popViewController(animated: true)
+                }))
+                
+                present(alert, animated: true, completion: nil)
+            }
+
+            
             _ = navigationController?.popViewController(animated: true)
         }
     }

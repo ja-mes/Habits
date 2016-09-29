@@ -356,7 +356,7 @@
 				DEVELOPMENT_TEAM = 5ZLSFF34EF;
 				INFOPLIST_FILE = Habits/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Habits;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamez-brown.habits";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +370,7 @@
 				DEVELOPMENT_TEAM = 5ZLSFF34EF;
 				INFOPLIST_FILE = Habits/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Habits;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jamez-brown.habits";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
