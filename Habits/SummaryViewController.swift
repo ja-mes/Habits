@@ -23,8 +23,6 @@ class SummaryViewController: UIViewController {
         super.viewDidAppear(true)
         
         let streak = Streak.shared.streakDays
-        
-        Streak.shared.streakDays = 2
 
         completedLbl.text = "\(Streak.shared.completedHabits) of \(Streak.shared.totalHabits)"
         streakCount.text = "\(streak)"
