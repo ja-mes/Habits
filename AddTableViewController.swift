@@ -15,7 +15,6 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
-    @IBOutlet weak var skipCell: UITableViewCell!
     
     var habit: Habit?
 
@@ -30,7 +29,6 @@ class AddTableViewController: UITableViewController {
             nameField.text = habit.name
             deleteCell.isHidden = false
             doneCell.isHidden = false
-            skipCell.isHidden = false
         }
                 
         if let habit = habit {
@@ -87,10 +85,20 @@ class AddTableViewController: UITableViewController {
     
     @IBAction func deleteTapped(_ sender: UIButton) {
         if let habit = habit {
-            Streak.shared.deleteHabit(habit: habit)
+            let deleteAlert = UIAlertController(title: "Are you sure you want to delete this habit?", message: "There is no undo!", preferredStyle: .alert)
+            
+            deleteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                Streak.shared.deleteHabit(habit: habit)
+                _ = self.navigationController?.popViewController(animated: true)
+            }))
+            
+            deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                
+            }))
+            
+            present(deleteAlert, animated: true, completion: nil)
         }
         
-        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func doneTapped(_ sender: UIButton) {
