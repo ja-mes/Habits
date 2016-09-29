@@ -153,15 +153,12 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // predicates
         
         let today = NSCalendar.current.startOfDay(for: Date())
-        let datePredicate: NSPredicate
-        
+
         if segment.selectedSegmentIndex == 0 {
-            datePredicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
-        } else  {
-            datePredicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
+            fetchRequest.predicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
+        } else if segment.selectedSegmentIndex == 1  {
+            fetchRequest.predicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
         }
-        
-        fetchRequest.predicate = datePredicate
         
         
         // sort descriptors
