@@ -127,15 +127,16 @@ class Streak {
     
     
     func checkStreakCompleted(inc: Bool) {
+        
         checkStreakEnded()
         
         if inc && totalHabits == completedHabits {
             
-            if !NSCalendar.current.isDate(lastEntry, inSameDayAs: Date()) {
+            if !NSCalendar.current.isDate(lastEntry, inSameDayAs: Date()) && completedHabits != 0 {
                 streakDays += 1
                 lastEntry = Date()
             }
-        } else if !inc && completedHabits == totalHabits - 1 && completedHabits != 0 {
+        } else if !inc && completedHabits == totalHabits - 1 && completedHabits != 0  {
             streakDays += -1
             lastEntry = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())!
         }
@@ -146,6 +147,7 @@ class Streak {
         let twoDaysAgo = NSCalendar.current.date(byAdding: .day, value: -2, to: Date())!
         
         if NSCalendar.current.isDate(twoDaysAgo, inSameDayAs: lastEntry) {
+            
             streakDays = 0
         }
 
