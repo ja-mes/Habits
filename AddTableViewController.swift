@@ -15,6 +15,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
+    @IBOutlet weak var repeatCell: UITableViewCell!
     
     var habit: Habit?
 
@@ -45,6 +46,12 @@ class AddTableViewController: UITableViewController {
         
         if habit == nil {
             nameField.becomeFirstResponder()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.indexPath(for: repeatCell) == indexPath {
+            performSegue(withIdentifier: "RepeatViewController", sender: nil)
         }
     }
     
