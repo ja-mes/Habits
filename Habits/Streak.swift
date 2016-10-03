@@ -132,11 +132,11 @@ class Streak {
         
         if inc && totalHabits == completedHabits {
             
-            if !NSCalendar.current.isDate(lastEntry, inSameDayAs: Date()) && completedHabits != 0 {
+            if !NSCalendar.current.isDate(lastEntry, inSameDayAs: Date()) && completedHabits != 0  {
                 streakDays += 1
                 lastEntry = Date()
             }
-        } else if !inc && completedHabits == totalHabits - 1 && completedHabits != 0  {
+        } else if !inc && completedHabits == totalHabits - 1 {
             streakDays += -1
             lastEntry = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())!
         }
