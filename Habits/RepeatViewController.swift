@@ -42,14 +42,14 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
         if let cell = tableView.cellForRow(at: indexPath) {
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
-                cell.alpha = 0.2
+                cell.textLabel?.alpha = 0.2
                 
                 if let index = selectedDays.index(of: indexPath.row) {
                     selectedDays.remove(at: index)
                 }
             } else if cell.accessoryType == .none {
                 cell.accessoryType = .checkmark
-                cell.alpha = 1.0
+                cell.textLabel?.alpha = 1.0
                 
                 selectedDays.append(indexPath.row)
             }
