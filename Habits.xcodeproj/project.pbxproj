@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4DF3D61DA454E0007C9DB8 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DF3D41DA454E0007C9DB8 /* Habit+CoreDataClass.swift */; };
+		9B4DF3D71DA454E0007C9DB8 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DF3D51DA454E0007C9DB8 /* Habit+CoreDataProperties.swift */; };
 		9B55E6771D9B44450095A098 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */; };
 		9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */; };
 		9B6261D11D987D95008962C8 /* BoldBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B4DF3D41DA454E0007C9DB8 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B4DF3D51DA454E0007C9DB8 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldBarButtonItem.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		9BB762801D85F9ED00D4A004 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B4DF3D41DA454E0007C9DB8 /* Habit+CoreDataClass.swift */,
+				9B4DF3D51DA454E0007C9DB8 /* Habit+CoreDataProperties.swift */,
 				9B7AE93F1D92109D005F11D3 /* Streak.swift */,
 				9BB607631D8F0C9800421825 /* Generated */,
 			);
@@ -222,8 +228,10 @@
 				9B55E6771D9B44450095A098 /* ColorTableViewCell.swift in Sources */,
 				9B7AE9441D941477005F11D3 /* Extension.swift in Sources */,
 				9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */,
+				9B4DF3D61DA454E0007C9DB8 /* Habit+CoreDataClass.swift in Sources */,
 				9BD6A14C1D9B3EA3004BF534 /* ColorsViewController.swift in Sources */,
 				9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */,
+				9B4DF3D71DA454E0007C9DB8 /* Habit+CoreDataProperties.swift in Sources */,
 				9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */,
 				9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */,
 				9B6261D11D987D95008962C8 /* BoldBarButtonItem.swift in Sources */,
