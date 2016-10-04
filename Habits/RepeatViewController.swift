@@ -12,13 +12,15 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
 
     let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    var selectedDays = [Int]()
+    var selectedDays = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        selectedDays = daysOfWeek
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,14 +46,14 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
                 cell.accessoryType = .none
                 cell.textLabel?.alpha = 0.2
                 
-                if let index = selectedDays.index(of: indexPath.row) {
+                if let index = selectedDays.index(of: daysOfWeek[indexPath.row]) {
                     selectedDays.remove(at: index)
                 }
             } else if cell.accessoryType == .none {
                 cell.accessoryType = .checkmark
                 cell.textLabel?.alpha = 1.0
                 
-                selectedDays.append(indexPath.row)
+                selectedDays.append(daysOfWeek[indexPath.row])
             }
         }
     }
