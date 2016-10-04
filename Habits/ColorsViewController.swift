@@ -12,7 +12,6 @@ class ColorsViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    //var hasFoundCurrentBlock = false
     var indexOfBlock: Int?
     
     override func viewDidLoad() {
