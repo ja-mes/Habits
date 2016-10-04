@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		9B4DF3D41DA454E0007C9DB8 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B4DF3D51DA454E0007C9DB8 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B4DF3D91DA45988007C9DB8 /* Habits 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Habits 2.xcdatamodel"; sourceTree = "<group>"; };
 		9B55E6761D9B44450095A098 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		9B6261CE1D987968008962C8 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		9B6261D01D987D95008962C8 /* BoldBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoldBarButtonItem.swift; sourceTree = "<group>"; };
@@ -408,9 +409,10 @@
 		9BB762701D85F91200D4A004 /* Habits.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9B4DF3D91DA45988007C9DB8 /* Habits 2.xcdatamodel */,
 				9BB762711D85F91200D4A004 /* Habits.xcdatamodel */,
 			);
-			currentVersion = 9BB762711D85F91200D4A004 /* Habits.xcdatamodel */;
+			currentVersion = 9B4DF3D91DA45988007C9DB8 /* Habits 2.xcdatamodel */;
 			path = Habits.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -16,7 +16,6 @@ extension Habit {
         return NSFetchRequest<Habit>(entityName: "Habit");
     }
 
-    @NSManaged public var days: Int64
     @NSManaged public var lastEntry: NSDate?
     @NSManaged public var name: String?
 
