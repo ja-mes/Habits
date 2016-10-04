@@ -93,7 +93,7 @@ class Streak {
     }
     
     func markAsDone(habit: Habit) {
-        habit.lastEntry = Date()
+        habit.lastEntry = Date() as NSDate?
         ad.saveContext()
         
         checkStreakCompleted(inc: true)
@@ -101,7 +101,7 @@ class Streak {
     
     func markAsNotDone(habit: Habit) {
         if let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date()) {
-            habit.lastEntry = yesterday
+            habit.lastEntry = yesterday as NSDate?
             ad.saveContext()
             
             checkStreakCompleted(inc: false)
@@ -110,7 +110,7 @@ class Streak {
     
     func checkHabitDone(habit: Habit) -> Bool {
         let today = NSCalendar.current.startOfDay(for: Date())
-        let compare = NSCalendar.current.compare(today, to: habit.lastEntry, toGranularity: .nanosecond).rawValue
+        let compare = NSCalendar.current.compare(today, to: habit.lastEntry as! Date, toGranularity: .nanosecond).rawValue
         
         if compare == 1 {
             return false

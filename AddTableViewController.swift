@@ -65,7 +65,7 @@ class AddTableViewController: UITableViewController {
             item = Habit(context: context)
             
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
-            item.lastEntry = yesterday!
+            item.lastEntry = yesterday! as NSDate?
         }
         
         if nameValid() {
