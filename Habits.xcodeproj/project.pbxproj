@@ -15,8 +15,6 @@
 		9B7AE94A1D986FD0005F11D3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AE9491D986FD0005F11D3 /* CircleView.swift */; };
 		9BA73F3D1DA1A74900D9272B /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA73F3C1DA1A74900D9272B /* RepeatViewController.swift */; };
 		9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */; };
-		9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */; };
-		9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */; };
 		9BB607671D8F144400421825 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607661D8F144400421825 /* AddTableViewController.swift */; };
 		9BB6076A1D8F2E4D00421825 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB607691D8F2E4D00421825 /* Constants.swift */; };
 		9BB7626A1D85F91200D4A004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB762691D85F91200D4A004 /* AppDelegate.swift */; };
@@ -37,8 +35,6 @@
 		9B7AE9491D986FD0005F11D3 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9BA73F3C1DA1A74900D9272B /* RepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
 		9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
-		9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BB607661D8F144400421825 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTableViewController.swift; path = ../AddTableViewController.swift; sourceTree = "<group>"; };
 		9BB607691D8F2E4D00421825 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BB762661D85F91200D4A004 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +62,6 @@
 		9BB607631D8F0C9800421825 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				9BB607601D8F0C2D00421825 /* Habit+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -140,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				9B7AE93F1D92109D005F11D3 /* Streak.swift */,
-				9BB6075F1D8F0C2D00421825 /* Habit+CoreDataClass.swift */,
 				9BB607631D8F0C9800421825 /* Generated */,
 			);
 			name = Model;
@@ -228,8 +222,6 @@
 				9B55E6771D9B44450095A098 /* ColorTableViewCell.swift in Sources */,
 				9B7AE9441D941477005F11D3 /* Extension.swift in Sources */,
 				9BB6075E1D8F0B3D00421825 /* HabitsViewController.swift in Sources */,
-				9BB607621D8F0C2D00421825 /* Habit+CoreDataProperties.swift in Sources */,
-				9BB607611D8F0C2D00421825 /* Habit+CoreDataClass.swift in Sources */,
 				9BD6A14C1D9B3EA3004BF534 /* ColorsViewController.swift in Sources */,
 				9B7AE9401D92109E005F11D3 /* Streak.swift in Sources */,
 				9B6261CF1D987968008962C8 /* CustomBarButtonItem.swift in Sources */,
