@@ -16,16 +16,16 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         tableView.delegate = self
         tableView.dataSource = self
         
-        selectedDays = DAYS_OF_WEEK
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "RepeatCell") {
+            if selectedDays.index(of: DAYS_OF_WEEK[indexPath.row]) != nil {
+                cell.accessoryType = .checkmark
+            }
             cell.textLabel?.text = DAYS_OF_WEEK[indexPath.row]
             return cell
         }
