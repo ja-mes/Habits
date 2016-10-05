@@ -151,13 +151,15 @@ class AddTableViewController: UITableViewController {
         
         if let selectedDays = notification.object as? [String] {
             let dateFormatter = DateFormatter()
-            dateFormatter.weekdaySymbols = DAYS_OF_WEEK
+            dateFormatter.weekdaySymbols = selectedDays
             
             print(selectedDays)
             
             for (i, _) in selectedDays.enumerated() {
+                
                 var test = dateFormatter.weekdaySymbols[i]
                 print(test)
+                
             }
             
             
