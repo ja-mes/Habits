@@ -71,16 +71,23 @@ class AddTableViewController: UITableViewController {
         let item: Habit!
         
         if let habit = habit {
+            
             item = habit
         } else {
+            
             item = Habit(context: context)
             
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
-            item.lastEntry = yesterday! as NSDate?
+            
+            item.lastEntry = yesterday!
         }
+        
+        item.days = selectedDays
         
         if nameValid() {
             item.name = nameField.text
+            
+            
             ad.saveContext()
 
             Streak.shared.checkStreakCompleted(inc: false)
