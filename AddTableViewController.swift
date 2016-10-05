@@ -150,12 +150,16 @@ class AddTableViewController: UITableViewController {
     func updateDays(notification: Notification) {
         
         if let selectedDays = notification.object as? [String] {
+            
+            if selectedDays.count == DAYS_OF_WEEK.count {
+                selectedDaysLbl.text = "Daily"
+                return
+            }
+            
             let dateFormatter = DateFormatter()
             dateFormatter.weekdaySymbols = selectedDays
             
             var sortedDaysLetters = [String]()
-            
-            print(selectedDays)
             
             for (i, _) in selectedDays.enumerated() {
                 var item = dateFormatter.weekdaySymbols[i]
