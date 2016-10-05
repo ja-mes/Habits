@@ -11,5 +11,7 @@ import CoreData
 
 
 public class Habit: NSManagedObject {
-
+    public override func awakeFromFetch() {
+        
+    }
 }

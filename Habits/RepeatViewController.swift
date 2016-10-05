@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepeatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RepeatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
 
     let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -16,7 +16,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -57,4 +57,9 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "selected_days"), object: selectedDays)
+    }
+    
 }

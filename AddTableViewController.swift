@@ -18,11 +18,14 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var repeatCell: UITableViewCell!
     
     var habit: Habit?
+    var selectedDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     
     // MARK: setup methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
@@ -43,6 +46,8 @@ class AddTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
+        print("\(selectedDays)")
         
         if habit == nil {
             nameField.becomeFirstResponder()

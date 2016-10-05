@@ -118,8 +118,8 @@
 			children = (
 				9BB7626B1D85F91200D4A004 /* SummaryViewController.swift */,
 				9BB6075D1D8F0B3D00421825 /* HabitsViewController.swift */,
-				9BA73F3C1DA1A74900D9272B /* RepeatViewController.swift */,
 				9BB607661D8F144400421825 /* AddTableViewController.swift */,
+				9BA73F3C1DA1A74900D9272B /* RepeatViewController.swift */,
 				9BD6A14B1D9B3EA3004BF534 /* ColorsViewController.swift */,
 			);
 			name = Controller;
