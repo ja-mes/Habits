@@ -153,15 +153,20 @@ class AddTableViewController: UITableViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.weekdaySymbols = selectedDays
             
+            var sortedDaysLetters = [String]()
+            
             print(selectedDays)
             
             for (i, _) in selectedDays.enumerated() {
+                var item = dateFormatter.weekdaySymbols[i]
                 
-                var test = dateFormatter.weekdaySymbols[i]
-                print(test)
+                if let firstChar = item.characters.first {
+                    sortedDaysLetters.append("\(firstChar)")
+                }
                 
             }
             
+            selectedDaysLbl.text = sortedDaysLetters.joined(separator: "")
             
         }
     }
