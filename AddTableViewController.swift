@@ -25,7 +25,7 @@ class AddTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDays(notification:)), name: Notification.Name(rawValue: "selected_days"), object: nil)
         
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
@@ -46,8 +46,6 @@ class AddTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        print("\(selectedDays)")
         
         if habit == nil {
             nameField.becomeFirstResponder()
@@ -145,6 +143,14 @@ class AddTableViewController: UITableViewController {
             return true
         } else {
             return false
+        }
+    }
+    
+    func updateDays(notification: Notification) {
+        
+        if let days = notification.object as? [String] {
+            
+            print("\(days)")
         }
     }
     

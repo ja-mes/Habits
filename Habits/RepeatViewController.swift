@@ -57,8 +57,8 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
-    
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+   
+    override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "selected_days"), object: selectedDays)
     }
     
