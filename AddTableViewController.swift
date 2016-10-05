@@ -19,8 +19,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var selectedDaysLbl: UILabel!
     
     var habit: Habit?
-    //var selectedDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-
+    var selectedDays = DAYS_OF_WEEK
     
     // MARK: setup methods
     override func viewDidLoad() {
@@ -56,6 +55,14 @@ class AddTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.indexPath(for: repeatCell) == indexPath {
             performSegue(withIdentifier: "RepeatViewController", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RepeatViewController" {
+            if let destination = segue.destination as? RepeatViewController {
+                destination.selectedDays = selectedDays
+            }
         }
     }
     
@@ -150,6 +157,7 @@ class AddTableViewController: UITableViewController {
     func updateDays(notification: Notification) {
         
         if let selectedDays = notification.object as? [String] {
+            self.selectedDays = selectedDays
             
             if selectedDays.count == DAYS_OF_WEEK.count {
                 selectedDaysLbl.text = "Daily"
