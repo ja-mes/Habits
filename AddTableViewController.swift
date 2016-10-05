@@ -16,6 +16,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
     @IBOutlet weak var repeatCell: UITableViewCell!
+    @IBOutlet weak var selectedDaysLbl: UILabel!
     
     var habit: Habit?
     var selectedDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -148,9 +149,37 @@ class AddTableViewController: UITableViewController {
     
     func updateDays(notification: Notification) {
         
-        if let days = notification.object as? [String] {
+        if let _ = notification.object as? [String] {
+            var daysArr = [String]()
             
-            print("\(days)")
+//            for (_, d) in selectedDays.enumerated() {
+//                switch d {
+//                case "Monday":
+//                    daysArr[0] = d
+//                    break
+//                case "Tuesday":
+//                    daysArr[1] = d
+//                    break
+//                case "Wednesday":
+//                    daysArr[2] = d
+//                    break
+//                case "Thursday":
+//                    daysArr[3] = d
+//                    break
+//                case "Friday":
+//                    daysArr[4] = d
+//                    break
+//                case "Saturday":
+//                    daysArr[5] = d
+//                    break
+//                case "Sunday":
+//                    daysArr[6] = d
+//                    break
+//                default: break
+//                }
+//            }
+            
+            selectedDaysLbl.text = daysArr.joined(separator: "")
         }
     }
     

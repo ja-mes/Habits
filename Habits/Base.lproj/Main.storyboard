@@ -479,6 +479,7 @@
                         <outlet property="doneCell" destination="az2-DP-4Bk" id="sGl-7a-eEL"/>
                         <outlet property="nameField" destination="TEN-tY-a8r" id="heh-bI-YI8"/>
                         <outlet property="repeatCell" destination="0T0-gK-9l1" id="DiO-Eu-Nh7"/>
+                        <outlet property="selectedDaysLbl" destination="YLU-fM-3UQ" id="Vag-an-DHx"/>
                         <segue destination="ris-6l-ntw" kind="show" identifier="RepeatViewController" id="tn1-t3-gUs"/>
                     </connections>
                 </tableViewController>
