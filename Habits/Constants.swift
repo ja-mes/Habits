@@ -24,5 +24,5 @@ let colors = [
 ]
 
 let days = [0, 3, 7, 14, 30, 60, 100, 180, 360]
-let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+let DAYS_OF_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 

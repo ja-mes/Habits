@@ -13,7 +13,7 @@ import CoreData
 public class Habit: NSManagedObject {
     public override func awakeFromInsert() {
         super.awakeFromInsert()
-        self.days = daysOfWeek
+        self.days = DAYS_OF_WEEK
     }
     
     public override func awakeFromFetch() {

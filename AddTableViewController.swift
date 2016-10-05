@@ -19,7 +19,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var selectedDaysLbl: UILabel!
     
     var habit: Habit?
-    var selectedDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    //var selectedDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     
     // MARK: setup methods
@@ -149,38 +149,40 @@ class AddTableViewController: UITableViewController {
     
     func updateDays(notification: Notification) {
         
-        if let _ = notification.object as? [String] {
-            var daysArr = [String]()
+        if let selectedDays = notification.object as? [String] {
+            let dateFormatter = DateFormatter()
+            dateFormatter.weekdaySymbols = DAYS_OF_WEEK
             
-//            for (_, d) in selectedDays.enumerated() {
-//                switch d {
-//                case "Monday":
-//                    daysArr[0] = d
-//                    break
-//                case "Tuesday":
-//                    daysArr[1] = d
-//                    break
-//                case "Wednesday":
-//                    daysArr[2] = d
-//                    break
-//                case "Thursday":
-//                    daysArr[3] = d
-//                    break
-//                case "Friday":
-//                    daysArr[4] = d
-//                    break
-//                case "Saturday":
-//                    daysArr[5] = d
-//                    break
-//                case "Sunday":
-//                    daysArr[6] = d
-//                    break
-//                default: break
-//                }
-//            }
+            print(selectedDays)
             
-            selectedDaysLbl.text = daysArr.joined(separator: "")
+            for (i, _) in selectedDays.enumerated() {
+                var test = dateFormatter.weekdaySymbols[i]
+                print(test)
+            }
+            
+            
         }
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
