@@ -81,6 +81,8 @@ class AddTableViewController: UITableViewController {
             item.lastEntry = yesterday!
         }
         
+        item.selectedDays = selectedDays.map({"\($0)"}).joined(separator: ",")
+        
         if nameValid() {
             item.name = nameField.text
             ad.saveContext()
