@@ -412,7 +412,7 @@
 				9B4DF3FF1DA6774E007C9DB8 /* Habits v2.xcdatamodel */,
 				9BB762711D85F91200D4A004 /* Habits.xcdatamodel */,
 			);
-			currentVersion = 9BB762711D85F91200D4A004 /* Habits.xcdatamodel */;
+			currentVersion = 9B4DF3FF1DA6774E007C9DB8 /* Habits v2.xcdatamodel */;
 			path = Habits.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

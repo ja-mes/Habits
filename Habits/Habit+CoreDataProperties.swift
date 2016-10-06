@@ -17,7 +17,6 @@ extension Habit {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var days: Int32
     @NSManaged public var lastEntry: Date
-
+    @NSManaged public var selectedDays: String?
 }

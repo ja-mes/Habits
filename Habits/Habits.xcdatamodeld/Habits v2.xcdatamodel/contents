@@ -3,7 +3,7 @@
     <entity name="Habit" representedClassName=".Habit" syncable="YES">
         <attribute name="lastEntry" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="selectedDays" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedDays" attributeType="String" defaultValueString="1,2,3,4,5,6,7" syncable="YES"/>
     </entity>
     <elements>
         <element name="Habit" positionX="-63" positionY="-18" width="128" height="90"/>
