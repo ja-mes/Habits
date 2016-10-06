@@ -29,9 +29,9 @@ class AddTableViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateDays(notification:)), name: Notification.Name(rawValue: "selected_days"), object: nil)
         
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
-        
         if let habit = habit {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "selected_days"), object: habit.selectedDays.components(separatedBy: ",").map({Int($0)!}))
+            
             nameField.text = habit.name
             deleteCell.isHidden = false
             doneCell.isHidden = false
@@ -41,7 +41,8 @@ class AddTableViewController: UITableViewController {
             } else {
                 doneButton.setTitle("Done", for: .normal)
             }
-
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
     }
