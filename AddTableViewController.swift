@@ -35,15 +35,15 @@ class AddTableViewController: UITableViewController {
             nameField.text = habit.name
             deleteCell.isHidden = false
             doneCell.isHidden = false
-        }
-                
-        if let habit = habit {
+            
             if Streak.shared.checkHabitDone(habit: habit) {
                 doneButton.setTitle("Not Done", for: .normal)
             } else {
                 doneButton.setTitle("Done", for: .normal)
             }
+
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
