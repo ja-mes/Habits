@@ -57,6 +57,14 @@ class AddTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RepeatViewController" {
+            if let destination = segue.destination as? RepeatViewController {
+                destination.selectedDays = selectedDays
+            }
+        }
+    }
+    
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         let item: Habit!
