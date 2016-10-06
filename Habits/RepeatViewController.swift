@@ -11,7 +11,6 @@ import UIKit
 class RepeatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
-    let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     var selectedDays = [Int]()
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "RepeatCell") {
-            cell.textLabel?.text = daysOfWeek[indexPath.row]
+            cell.textLabel?.text = DAYS_OF_WEEK[indexPath.row]
             return cell
         }
         

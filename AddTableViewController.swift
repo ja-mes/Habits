@@ -18,6 +18,8 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var repeatCell: UITableViewCell!
     
     var habit: Habit?
+    
+    var selectedDays = [1, 2, 3, 4, 5, 6, 7]
 
     
     // MARK: setup methods
@@ -142,5 +144,4 @@ class AddTableViewController: UITableViewController {
             return false
         }
     }
-    
 }
