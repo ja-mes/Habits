@@ -3,8 +3,9 @@
     <entity name="Habit" representedClassName=".Habit" syncable="YES">
         <attribute name="lastEntry" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="selectedDays" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Habit" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Habit" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
