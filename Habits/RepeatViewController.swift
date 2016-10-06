@@ -22,7 +22,7 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "RepeatCell") {
-            if selectedDays.index(of: indexPath.row + 1) != nil {
+            if selectedDays.index(of: indexPath.row) != nil {
                 cell.accessoryType = .checkmark
             }
             
@@ -38,24 +38,39 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return DAYS_OF_WEEK.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let cell = tableView.cellForRow(at: indexPath) {
+            
             if cell.accessoryType == .checkmark {
                 cell.accessoryType = .none
                 cell.textLabel?.alpha = 0.2
                 
                 if let index = selectedDays.index(of: indexPath.row) {
                     selectedDays.remove(at: index)
+                    
+                    print(selectedDays)
                 }
             } else if cell.accessoryType == .none {
+                
                 cell.accessoryType = .checkmark
                 cell.textLabel?.alpha = 1.0
                 
                 selectedDays.append(indexPath.row)
+                
+                print(selectedDays)
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        selectedDays.sort {
+            return $0 < $1
+        }
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "selected_days"), object: selectedDays)
     }
 }

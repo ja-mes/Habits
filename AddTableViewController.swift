@@ -19,12 +19,14 @@ class AddTableViewController: UITableViewController {
     
     var habit: Habit?
     
-    var selectedDays = [1, 2, 3, 4, 5, 6, 7]
+    var selectedDays = [0, 1, 2, 3, 4, 5, 6]
 
     
     // MARK: setup methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDays(notification:)), name: Notification.Name(rawValue: "selected_days"), object: nil)
         
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
@@ -150,6 +152,12 @@ class AddTableViewController: UITableViewController {
             return true
         } else {
             return false
+        }
+    }
+    
+    func updateDays(notification: Notification) {
+        if let selectedDays = notification.object as? [Int] {
+            print(selectedDays)
         }
     }
 }
