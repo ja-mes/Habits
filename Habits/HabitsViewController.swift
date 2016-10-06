@@ -187,7 +187,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
         let habit = controller.object(at: indexPath)
-        cell.textLabel?.text = habit.name
+        cell.textLabel?.text = habit.selectedDays
     }
 }
 
