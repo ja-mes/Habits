@@ -155,9 +155,6 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let today = NSCalendar.current.startOfDay(for: Date())
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayOfWeekString = dateFormatter.string(from: Date())
 
         if segment.selectedSegmentIndex == 0 {
             fetchRequest.predicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
