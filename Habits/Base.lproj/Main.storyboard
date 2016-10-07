@@ -274,7 +274,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-Fj-GhX">
                                 <segments>
                                     <segment title="Today"/>
-                                    <segment title="Done Today"/>
+                                    <segment title="Done"/>
+                                    <segment title="All"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
