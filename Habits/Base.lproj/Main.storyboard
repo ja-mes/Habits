@@ -410,7 +410,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8L-So-bqJ" userLabel="Done">
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <state key="normal" title="Done"/>
+                                                    <state key="normal" title="Mark as done"/>
                                                     <connections>
                                                         <action selector="doneTapped:" destination="Et4-jS-ffr" eventType="touchUpInside" id="wk9-WM-vUh"/>
                                                     </connections>

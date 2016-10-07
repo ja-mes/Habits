@@ -37,9 +37,9 @@ class AddTableViewController: UITableViewController {
             doneCell.isHidden = false
             
             if Streak.shared.checkHabitDone(habit: habit) {
-                doneButton.setTitle("Not Done", for: .normal)
+                doneButton.setTitle("Mark as incomplete", for: .normal)
             } else {
-                doneButton.setTitle("Done", for: .normal)
+                doneButton.setTitle("Mark as done", for: .normal)
             }
         } else {
             self.navigationItem.rightBarButtonItem?.isEnabled = false
