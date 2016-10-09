@@ -55,6 +55,9 @@ class Streak {
     
     var totalHabits: Int {
         let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
+        let dayInt = Date().todayInt()
+        fetchRequest.predicate = NSPredicate(format: "selectedDays CONTAINS[c] %@", "\(dayInt)" as CVarArg)
+        
         _totalHabits = 0
         
         do {
