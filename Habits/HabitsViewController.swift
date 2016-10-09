@@ -155,9 +155,48 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let today = NSCalendar.current.startOfDay(for: Date())
         
+        var dayInt: Int!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let day = dateFormatter.string(from: Date())
+        
+        switch day {
+        case "Sunday":
+            dayInt = 0
+            break
+        case "Monday":
+            dayInt = 1
+            break
+        case "Tuesday":
+            dayInt = 2
+            break
+        case "Wednesday":
+            dayInt = 3
+            break
+        case "Thursday":
+            dayInt = 4
+            break
+        case "Friday":
+            dayInt = 5
+            break
+        case "Saturday":
+            dayInt = 6
+            break
+        default:
+            dayInt = 0
+        }
+        
+        
 
         if segment.selectedSegmentIndex == 0 {
-            fetchRequest.predicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
+            
+            let todayPredicate = NSPredicate(format: "selectedDays CONTAINS[c] %@", "\(dayInt!)" as CVarArg)
+            let entryPredicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
+
+            fetchRequest.predicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: [todayPredicate, entryPredicate])
+            
+    
+            //fetchRequest.predicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
         } else if segment.selectedSegmentIndex == 1  {
             fetchRequest.predicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
         }
