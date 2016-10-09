@@ -93,7 +93,7 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         notDone.backgroundColor = UIColor.gray
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) in
-            let deleteAlert = UIAlertController(title: "Are you sure you want to delete this habit?", message: "There is no undo!", preferredStyle: .alert)
+            let deleteAlert = UIAlertController(title: "Confirmation", message: "Are you sure you want to delete this habit?", preferredStyle: .alert)
             
             deleteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 Streak.shared.deleteHabit(habit: habit)
