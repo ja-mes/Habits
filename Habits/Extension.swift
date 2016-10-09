@@ -37,8 +37,7 @@ extension Date {
         case "Saturday":
             dayInt = 6
             break
-        default:
-            dayInt = 0
+        default: break
         }
         
         return dayInt!
