@@ -66,6 +66,10 @@ class Streak {
             print("JAMES: unable to count habits")
         }
         
+        if _totalHabits < completedHabits {
+            return completedHabits
+        }
+        
         return _totalHabits
     }
     

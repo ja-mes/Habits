@@ -89,6 +89,7 @@ class AddTableViewController: UITableViewController {
             ad.saveContext()
 
             Streak.shared.checkStreakCompleted(inc: false)
+            Streak.shared.checkStreakCompleted(inc: true)
         }
         
         _ = navigationController?.popViewController(animated: true)
