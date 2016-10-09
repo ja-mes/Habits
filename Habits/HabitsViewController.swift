@@ -211,6 +211,15 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
         let habit = controller.object(at: indexPath)
         cell.textLabel?.text = habit.name
+        
+        let selectedDays = habit.selectedDays.components(separatedBy: ",").map({Int($0)!})
+                
+        if selectedDays.count == DAYS_OF_WEEK.count {
+            cell.detailTextLabel?.text = "Daily"
+        } else {
+            cell.detailTextLabel?.text = Streak.shared.dayLetters(selectedDays: selectedDays)
+        }
+        
     }
 }
 

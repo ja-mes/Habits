@@ -160,6 +160,42 @@ class Streak {
 
     }
     
+    func dayLetters(selectedDays: [Int]) -> String {
+        var dayLetters = [String]()
+        
+        
+        for day in selectedDays {
+            switch day {
+            case 0:
+                dayLetters.append("S")
+                break
+            case 1:
+                dayLetters.append("M")
+                break
+            case 2:
+                dayLetters.append("T")
+                break
+            case 3:
+                dayLetters.append("W")
+                break
+            case 4:
+                dayLetters.append("T")
+                break
+            case 5:
+                dayLetters.append("F")
+                break
+            case 6:
+                dayLetters.append("S")
+                break
+            default: break
+                
+            }
+            
+        }
+        
+        return dayLetters.joined(separator: ",")
+
+    }
 }
 
 
