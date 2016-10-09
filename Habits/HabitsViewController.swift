@@ -80,23 +80,41 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let habit = self.controller.object(at: indexPath)
+
         let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
-            let habit = self.controller.object(at: indexPath)
             Streak.shared.markAsDone(habit: habit)
         }
         done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
         
         let notDone = UITableViewRowAction(style: .normal, title: "Not Done") { action, index in
-            let habit = self.controller.object(at: indexPath)
             Streak.shared.markAsNotDone(habit: habit)
         }
         notDone.backgroundColor = UIColor.gray
         
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) in
+            let deleteAlert = UIAlertController(title: "Are you sure you want to delete this habit?", message: "There is no undo!", preferredStyle: .alert)
+            
+            deleteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                Streak.shared.deleteHabit(habit: habit)
+            }))
+            
+            deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                
+            }))
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
+        delete.backgroundColor = UIColor.red
+        
         if segment.selectedSegmentIndex == 0 {
             return [done]
+        } else if segment.selectedSegmentIndex == 1 {
+            return [notDone]
+        } else {
+            return [delete]
         }
         
-        return [notDone]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

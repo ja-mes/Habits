@@ -40,7 +40,7 @@ class Streak {
             let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
             let today = NSCalendar.current.startOfDay(for: Date())
             let datePredicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
-            
+
             fetchRequest.predicate = datePredicate
             
             do {
