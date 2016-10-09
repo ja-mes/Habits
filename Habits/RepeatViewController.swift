@@ -52,7 +52,6 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
                 if let index = selectedDays.index(of: indexPath.row) {
                     selectedDays.remove(at: index)
                     
-                    print(selectedDays)
                 }
             } else if cell.accessoryType == .none {
                 
@@ -61,7 +60,6 @@ class RepeatViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 selectedDays.append(indexPath.row)
                 
-                print(selectedDays)
             }
         }
     }
