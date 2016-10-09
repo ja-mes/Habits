@@ -72,10 +72,15 @@ class AddTableViewController: UITableViewController {
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         let item: Habit!
+        var isFirst = false
         
         if let habit = habit {
             item = habit
         } else {
+            if Streak.shared.totalHabits == 0 {
+                isFirst = true
+            }
+            
             item = Habit(context: context)
             
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
@@ -87,8 +92,11 @@ class AddTableViewController: UITableViewController {
         if nameValid() {
             item.name = nameField.text
             ad.saveContext()
-
-            Streak.shared.checkStreakCompleted(inc: false)
+            
+            if !isFirst {
+                Streak.shared.checkStreakCompleted(inc: false)
+            }
+            
             Streak.shared.checkStreakCompleted(inc: true)
         }
         
