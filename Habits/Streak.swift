@@ -193,7 +193,7 @@ class Streak {
             
         }
         
-        return dayLetters.joined(separator: "")
+        return dayLetters.joined(separator: " ")
 
     }
 }
