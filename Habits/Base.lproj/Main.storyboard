@@ -377,37 +377,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="WJt-Z9-QP2">
-                                <cells>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="az2-DP-4Bk">
-                                        <rect key="frame" x="0.0" y="179" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="az2-DP-4Bk" id="Bpb-mr-eZZ">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8L-So-bqJ" userLabel="Done">
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <state key="normal" title="Mark as done"/>
-                                                    <connections>
-                                                        <action selector="doneTapped:" destination="Et4-jS-ffr" eventType="touchUpInside" id="wk9-WM-vUh"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="g8L-So-bqJ" secondAttribute="trailing" id="6KO-ca-9AS"/>
-                                                <constraint firstItem="g8L-So-bqJ" firstAttribute="leading" secondItem="Bpb-mr-eZZ" secondAttribute="leading" constant="15" id="J3q-3V-CII"/>
-                                                <constraint firstAttribute="bottom" secondItem="g8L-So-bqJ" secondAttribute="bottom" id="Lj1-kb-zBU"/>
-                                                <constraint firstItem="g8L-So-bqJ" firstAttribute="top" secondItem="Bpb-mr-eZZ" secondAttribute="top" id="lnQ-Kz-ODe"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection id="WlD-Zx-IeX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Oi3-gG-yK0" detailTextLabel="YLU-fM-3UQ" style="IBUITableViewCellStyleValue1" id="0T0-gK-9l1">
-                                        <rect key="frame" x="0.0" y="259" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="179" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0T0-gK-9l1" id="UPq-Hg-C8a">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -430,6 +403,33 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="WJt-Z9-QP2">
+                                <cells>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="az2-DP-4Bk">
+                                        <rect key="frame" x="0.0" y="259" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="az2-DP-4Bk" id="Bpb-mr-eZZ">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8L-So-bqJ" userLabel="Done">
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <state key="normal" title="Mark as done"/>
+                                                    <connections>
+                                                        <action selector="doneTapped:" destination="Et4-jS-ffr" eventType="touchUpInside" id="wk9-WM-vUh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="g8L-So-bqJ" secondAttribute="trailing" id="6KO-ca-9AS"/>
+                                                <constraint firstItem="g8L-So-bqJ" firstAttribute="leading" secondItem="Bpb-mr-eZZ" secondAttribute="leading" constant="15" id="J3q-3V-CII"/>
+                                                <constraint firstAttribute="bottom" secondItem="g8L-So-bqJ" secondAttribute="bottom" id="Lj1-kb-zBU"/>
+                                                <constraint firstItem="g8L-So-bqJ" firstAttribute="top" secondItem="Bpb-mr-eZZ" secondAttribute="top" id="lnQ-Kz-ODe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
