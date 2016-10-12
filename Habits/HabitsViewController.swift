@@ -80,23 +80,41 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let habit = self.controller.object(at: indexPath)
+
         let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
-            let habit = self.controller.object(at: indexPath)
             Streak.shared.markAsDone(habit: habit)
         }
         done.backgroundColor = #colorLiteral(red: 0.2980392157, green: 0.6862745098, blue: 0.3137254902, alpha: 1)
         
         let notDone = UITableViewRowAction(style: .normal, title: "Not Done") { action, index in
-            let habit = self.controller.object(at: indexPath)
             Streak.shared.markAsNotDone(habit: habit)
         }
         notDone.backgroundColor = UIColor.gray
         
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) in
+            let deleteAlert = UIAlertController(title: "Confirmation", message: "Are you sure you want to delete this habit?", preferredStyle: .alert)
+            
+            deleteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                Streak.shared.deleteHabit(habit: habit)
+            }))
+            
+            deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                
+            }))
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
+        delete.backgroundColor = UIColor.red
+        
         if segment.selectedSegmentIndex == 0 {
             return [done]
+        } else if segment.selectedSegmentIndex == 1 {
+            return [notDone]
+        } else {
+            return [delete]
         }
         
-        return [notDone]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -155,12 +173,17 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let today = NSCalendar.current.startOfDay(for: Date())
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayOfWeekString = dateFormatter.string(from: Date())
+        let dayInt = Date().todayInt()
 
         if segment.selectedSegmentIndex == 0 {
-            fetchRequest.predicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
+            
+            let todayPredicate = NSPredicate(format: "selectedDays CONTAINS[c] %@", "\(dayInt)" as CVarArg)
+            let entryPredicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
+
+            fetchRequest.predicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: [todayPredicate, entryPredicate])
+            
+    
+            //fetchRequest.predicate = NSPredicate(format: "lastEntry < %@", today as CVarArg)
         } else if segment.selectedSegmentIndex == 1  {
             fetchRequest.predicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
         }
@@ -188,6 +211,20 @@ class HabitsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
         let habit = controller.object(at: indexPath)
         cell.textLabel?.text = habit.name
+        
+        if segment.selectedSegmentIndex == 2 {
+            let selectedDays = habit.selectedDays.components(separatedBy: ",").map({Int($0)!})
+            
+            if selectedDays.count == DAYS_OF_WEEK.count {
+                cell.detailTextLabel?.text = "Daily"
+            } else {
+                cell.detailTextLabel?.text = Streak.shared.dayLetters(selectedDays: selectedDays)
+            }
+            
+        } else {
+            cell.detailTextLabel?.text = ""
+        }
+        
     }
 }
 

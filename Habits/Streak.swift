@@ -40,7 +40,7 @@ class Streak {
             let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
             let today = NSCalendar.current.startOfDay(for: Date())
             let datePredicate = NSPredicate(format: "lastEntry > %@", today as CVarArg)
-            
+
             fetchRequest.predicate = datePredicate
             
             do {
@@ -55,12 +55,19 @@ class Streak {
     
     var totalHabits: Int {
         let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
+        let dayInt = Date().todayInt()
+        fetchRequest.predicate = NSPredicate(format: "selectedDays CONTAINS[c] %@", "\(dayInt)" as CVarArg)
+        
         _totalHabits = 0
         
         do {
             _totalHabits = try context.count(for: fetchRequest)
         } catch {
             print("JAMES: unable to count habits")
+        }
+        
+        if _totalHabits < completedHabits {
+            return completedHabits
         }
         
         return _totalHabits
@@ -153,6 +160,42 @@ class Streak {
 
     }
     
+    func dayLetters(selectedDays: [Int]) -> String {
+        var dayLetters = [String]()
+        
+        
+        for day in selectedDays {
+            switch day {
+            case 0:
+                dayLetters.append("S")
+                break
+            case 1:
+                dayLetters.append("M")
+                break
+            case 2:
+                dayLetters.append("T")
+                break
+            case 3:
+                dayLetters.append("W")
+                break
+            case 4:
+                dayLetters.append("T")
+                break
+            case 5:
+                dayLetters.append("F")
+                break
+            case 6:
+                dayLetters.append("S")
+                break
+            default: break
+                
+            }
+            
+        }
+        
+        return dayLetters.joined(separator: " ")
+
+    }
 }
 
 

@@ -16,29 +16,35 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var deleteCell: UITableViewCell!
     @IBOutlet weak var doneCell: UITableViewCell!
     @IBOutlet weak var repeatCell: UITableViewCell!
+    @IBOutlet weak var selectedDaysLbl: UILabel!
     
     var habit: Habit?
+    
+    var selectedDays = [0, 1, 2, 3, 4, 5, 6]
 
     
     // MARK: setup methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDays(notification:)), name: Notification.Name(rawValue: "selected_days"), object: nil)
         
         if let habit = habit {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "selected_days"), object: habit.selectedDays.components(separatedBy: ",").map({Int($0)!}))
+            
             nameField.text = habit.name
             deleteCell.isHidden = false
             doneCell.isHidden = false
-        }
-                
-        if let habit = habit {
+            
             if Streak.shared.checkHabitDone(habit: habit) {
-                doneButton.setTitle("Not Done", for: .normal)
+                doneButton.setTitle("Mark as incomplete", for: .normal)
             } else {
-                doneButton.setTitle("Done", for: .normal)
+                doneButton.setTitle("Mark as done", for: .normal)
             }
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,24 +61,43 @@ class AddTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RepeatViewController" {
+            if let destination = segue.destination as? RepeatViewController {
+                destination.selectedDays = selectedDays
+            }
+        }
+    }
+    
     // MARK: IBActions
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         let item: Habit!
+        var isFirst = false
         
         if let habit = habit {
             item = habit
         } else {
+            if Streak.shared.totalHabits == 0 {
+                isFirst = true
+            }
+            
             item = Habit(context: context)
             
             let yesterday = NSCalendar.current.date(byAdding: .day, value: -1, to: Date())
             item.lastEntry = yesterday!
         }
         
+        item.selectedDays = selectedDays.map({"\($0)"}).joined(separator: ",")
+        
         if nameValid() {
             item.name = nameField.text
             ad.saveContext()
-
-            Streak.shared.checkStreakCompleted(inc: false)
+            
+            if !isFirst {
+                Streak.shared.checkStreakCompleted(inc: false)
+            }
+            
+            Streak.shared.checkStreakCompleted(inc: true)
         }
         
         _ = navigationController?.popViewController(animated: true)
@@ -92,7 +117,7 @@ class AddTableViewController: UITableViewController {
     
     @IBAction func deleteTapped(_ sender: UIButton) {
         if let habit = habit {
-            let deleteAlert = UIAlertController(title: "Are you sure you want to delete this habit?", message: "There is no undo!", preferredStyle: .alert)
+            let deleteAlert = UIAlertController(title: "Confirmation", message: "Are you sure you want to delete this habit?", preferredStyle: .alert)
             
             deleteAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 Streak.shared.deleteHabit(habit: habit)
@@ -141,6 +166,19 @@ class AddTableViewController: UITableViewController {
         } else {
             return false
         }
+    }
+    
+    func updateDays(notification: Notification) {
+        if let selectedDays = notification.object as? [Int] {
+            self.selectedDays = selectedDays
+            
+            if selectedDays.count == DAYS_OF_WEEK.count {
+                selectedDaysLbl.text = "Daily"
+            } else {
+                selectedDaysLbl.text = Streak.shared.dayLetters(selectedDays: selectedDays)
+            }
+        }
+        
     }
     
 }
